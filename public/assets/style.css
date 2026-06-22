@@ -234,6 +234,15 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   margin-bottom: 1.25rem;
 }
 
+.hero-name-zh {
+  font-family: "Noto Serif TC", "Songti TC", serif;
+  font-size: clamp(2.25rem, 6vw, 3.5rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  color: var(--white);
+  margin: 0 0 0.5rem;
+}
+
 .hero h1 { color: var(--white); margin-bottom: 1rem; }
 
 .hero-sub {

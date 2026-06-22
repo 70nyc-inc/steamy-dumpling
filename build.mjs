@@ -177,7 +177,7 @@ function head({ title, desc, canonical, ogImage = "/assets/images/hero-poster.jp
   <meta name="twitter:image" content="${esc(img)}" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Inter:wght@400;500;600&family=Noto+Serif+TC:wght@500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/style.css" />
   ${schemaRestaurant()}
 </head>`;
@@ -269,6 +269,7 @@ function homeBody() {
       <div class="hero-overlay"></div>
       <div class="hero-content container">
         <p class="hero-eyebrow">${esc(site.tagline)}</p>
+        ${site.nameZh ? `<p class="hero-name-zh" lang="zh-Hant">${esc(site.nameZh)}</p>` : ""}
         <h1>${esc(site.hero.title)}</h1>
         <p class="hero-sub">${esc(site.hero.subtitle)}</p>
         <div class="hero-cta">
