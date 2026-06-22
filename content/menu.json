@@ -1,73 +1,430 @@
 {
   "categories": [
     {
-      "name": "Soup Dumplings",
+      "name": "Hand Crafted Steamed XLB",
+      "nameZh": "手工小笼包",
       "items": [
         {
-          "name": "Pork Soup Dumplings",
-          "nameZh": "鲜肉汤包",
+          "name": "Classic Pork Soup Dumplings",
+          "nameZh": "鲜肉小笼汤包",
+          "price": "$12.00",
+          "desc": "6 pieces. Shanghai-style xiaolongbao with savory pork and rich broth.",
+          "tags": [
+            "Signature"
+          ]
+        },
+        {
+          "name": "Crabmeat & Pork Soup Dumplings",
+          "nameZh": "蟹粉小笼汤包",
+          "price": "$13.50",
+          "desc": "6 pieces. Seasonal crab roe folded into delicate handmade wrappers.",
+          "tags": [
+            "Signature"
+          ]
+        },
+        {
+          "name": "Chicken Soup Dumplings",
+          "nameZh": "鸡肉小笼汤包",
+          "price": "$12.95",
+          "desc": "6 pieces. Light, aromatic chicken filling with a clean broth."
+        },
+        {
+          "name": "Truffle Pork Soup Dumplings",
+          "nameZh": "黑松露小笼汤包",
+          "price": "$15.95",
+          "desc": "6 pieces. Black truffle and pork in handmade soup dumplings."
+        },
+        {
+          "name": "Shrimp & Pork Soup Dumplings",
+          "nameZh": "鲜虾猪肉小笼汤包",
+          "price": "$13.50",
+          "desc": "6 pieces. Fresh shrimp and pork with a sweet, juicy filling."
+        },
+        {
+          "name": "Pan Seared Pork Bao",
+          "nameZh": "招牌爆汁生煎包",
+          "price": "$8.95",
+          "desc": "4 pieces. Crisp bottom, soft top, juicy pork — Shanghai pan-fried buns.",
+          "tags": [
+            "Signature"
+          ]
+        },
+        {
+          "name": "Classic Savory Pork Bun",
+          "nameZh": "酱肉小笼包",
+          "price": "$10.95",
+          "desc": "5 pieces. Savory braised pork in fluffy steamed buns.",
+          "tags": [
+            "Signature"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Savory Starters",
+      "nameZh": "特色前菜",
+      "items": [
+        {
+          "name": "Spicy Cucumber Salad",
+          "nameZh": "凉拌小黄瓜",
+          "price": "$8.50",
+          "desc": "Chilled cucumber with a bright, spicy dressing.",
+          "tags": [
+            "Signature",
+            "Spicy"
+          ]
+        },
+        {
+          "name": "Salt & Pepper Edamame",
+          "nameZh": "椒盐毛豆",
+          "price": "$6.95",
+          "desc": "Steamed edamame tossed with salt and pepper.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Black Wood Ear Mushroom",
+          "nameZh": "凉拌木耳",
+          "price": "$8.95",
+          "desc": "Wood ear mushroom in a tangy vinegar dressing. Served cold.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Soy Braised Beef",
+          "nameZh": "酱香牛肉",
+          "price": "$12.95",
+          "desc": "Thinly sliced beef in house soy braising sauce. Served cold."
+        },
+        {
+          "name": "Cheesy Fried Chicken Cutlet",
+          "nameZh": "芝士炸鸡排",
+          "price": "$13.99",
+          "desc": "Crispy fried chicken cutlet with melted cheese."
+        },
+        {
+          "name": "Crispy Pork Chop",
+          "nameZh": "炸猪排",
           "price": "$8.99",
-          "desc": "Classic Shanghai xiaolongbao with savory pork and rich broth. 8 pieces.",
-          "tag": "Signature"
+          "desc": "Golden fried pork chop, Shanghai-style."
         },
         {
-          "name": "Crab Roe Soup Dumplings",
-          "nameZh": "蟹粉汤包",
-          "price": "$12.99",
-          "desc": "Seasonal crab roe folded into delicate wrappers. Limited daily. 6 pieces.",
-          "tag": "Seasonal"
+          "name": "Fried Spring Roll",
+          "nameZh": "炸上海卷",
+          "price": "$5.95",
+          "desc": "2 pieces. Crispy Shanghai spring rolls.",
+          "tags": [
+            "Vegetarian"
+          ]
         },
         {
-          "name": "Shanghai Xiaolongbao",
-          "nameZh": "上海小笼",
-          "price": "$7.99",
-          "desc": "Smaller, lighter dumplings with a clean, aromatic broth. 10 pieces.",
-          "tag": null
+          "name": "Fried Pork Wonton",
+          "nameZh": "炸云吞",
+          "price": "$7.95",
+          "desc": "6 pieces. Fried wontons with a light, crispy shell."
+        },
+        {
+          "name": "Beef Scallion Roll",
+          "nameZh": "牛肉卷饼",
+          "price": "$11.95",
+          "desc": "Flaky scallion pancake rolled with seasoned beef."
+        },
+        {
+          "name": "Pork Wonton in Red Chili Sauce",
+          "nameZh": "猪肉红油抄手",
+          "price": "$8.95",
+          "desc": "8 pieces. Pork wontons in fragrant chili oil.",
+          "tags": [
+            "Signature",
+            "Spicy"
+          ]
+        },
+        {
+          "name": "Shrimp & Pork Wonton in Red Chili Sauce",
+          "nameZh": "鲜虾猪肉红油抄手",
+          "price": "$9.50",
+          "desc": "8 pieces. Shrimp and pork wontons in red chili sauce.",
+          "tags": [
+            "Spicy"
+          ]
+        },
+        {
+          "name": "Tangy Glazed Pork Ribs",
+          "nameZh": "糖醋小排",
+          "price": "$12.95",
+          "desc": "Sweet and tangy glazed pork spare ribs."
         }
       ]
     },
     {
-      "name": "Dim Sum & Sides",
+      "name": "Soups",
+      "nameZh": "汤",
       "items": [
         {
-          "name": "Pan-Fried Pork Buns",
-          "nameZh": "生煎包",
-          "price": "$7.49",
-          "desc": "Crisp bottom, soft top, juicy pork filling. 4 pieces.",
-          "tag": null
+          "name": "Pork Wonton Soup",
+          "nameZh": "鲜肉馄饨汤",
+          "price": "$6.95",
+          "desc": "5 pieces. Handmade pork wontons in clear broth."
         },
         {
-          "name": "Scallion Pancake",
-          "nameZh": "葱油饼",
-          "price": "$5.99",
-          "desc": "Flaky, golden, and freshly griddled.",
-          "tag": null
+          "name": "Pork & Shrimp Wonton Soup",
+          "nameZh": "鲜肉虾馄饨汤",
+          "price": "$7.95",
+          "desc": "5 pieces. Pork and shrimp wontons in savory soup."
         },
         {
-          "name": "Cucumber Salad",
-          "nameZh": "凉拌黄瓜",
-          "price": "$4.99",
-          "desc": "Light, refreshing, with sesame dressing.",
-          "tag": null
+          "name": "Hot & Sour Soup",
+          "nameZh": "酸辣汤",
+          "price": "$6.95",
+          "desc": "Classic hot and sour soup with tofu and vegetables.",
+          "tags": [
+            "Spicy"
+          ]
+        },
+        {
+          "name": "Steamed Beef Short Ribs Soup",
+          "nameZh": "圆盅顿上汤牛排骨汤",
+          "price": "$12.95",
+          "desc": "Slow-steamed beef short ribs in a rich, clear broth."
         }
       ]
     },
     {
-      "name": "Drinks",
+      "name": "Rice",
+      "nameZh": "饭",
       "items": [
         {
-          "name": "Jasmine Tea",
-          "nameZh": "茉莉花茶",
-          "price": "$2.99",
-          "desc": "Hot or iced.",
-          "tag": null
+          "name": "Classic Yang Fried Rice",
+          "nameZh": "经典炒饭",
+          "price": "$13.95",
+          "desc": "Choice of chicken, pork, shrimp, beef, or vegetable."
         },
         {
-          "name": "Soy Milk",
-          "nameZh": "豆浆",
-          "price": "$3.49",
-          "desc": "Fresh and lightly sweetened.",
-          "tag": null
+          "name": "Spicy Minced Pork Rice Bowl",
+          "nameZh": "香辣鲜肉碎饭",
+          "price": "$14.95",
+          "desc": "Fragrant minced pork over steamed rice with chili.",
+          "tags": [
+            "Spicy"
+          ]
+        },
+        {
+          "name": "Pork Chop Fried Rice",
+          "nameZh": "香煎猪排炒饭",
+          "price": "$15.95",
+          "desc": "Fried rice topped with a crispy pan-seared pork chop."
+        }
+      ]
+    },
+    {
+      "name": "Steamed Dumplings & Potstickers",
+      "nameZh": "蒸饺锅贴",
+      "items": [
+        {
+          "name": "Pork & Cabbage Steamed Dumplings",
+          "nameZh": "白菜猪肉蒸饺",
+          "price": "$12.50",
+          "desc": "8 pieces. Handmade steamed dumplings with pork and cabbage."
+        },
+        {
+          "name": "Pork & Shrimp & Cabbage Steamed Dumplings",
+          "nameZh": "鲜虾白菜猪肉蒸饺",
+          "price": "$13.50",
+          "desc": "8 pieces. Pork, shrimp and cabbage in delicate wrappers."
+        },
+        {
+          "name": "Vegetable Steamed Dumplings",
+          "nameZh": "蔬菜蒸饺",
+          "price": "$13.50",
+          "desc": "8 pieces. Seasonal vegetables folded by hand.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Pork Potsticker",
+          "nameZh": "猪肉锅贴",
+          "price": "$10.95",
+          "desc": "6 pieces. Pan-fried pork potstickers with a crisp bottom."
+        },
+        {
+          "name": "Corn & Pork Potsticker",
+          "nameZh": "玉米猪肉锅贴",
+          "price": "$10.95",
+          "desc": "6 pieces. Sweet corn and pork in golden potstickers."
+        },
+        {
+          "name": "Shrimp & Pork Potsticker",
+          "nameZh": "鲜虾猪肉锅贴",
+          "price": "$11.95",
+          "desc": "6 pieces. Shrimp and pork with a savory, juicy filling."
+        }
+      ]
+    },
+    {
+      "name": "Noodles",
+      "nameZh": "面",
+      "items": [
+        {
+          "name": "Classic Scallion Oil Dry Noodles",
+          "nameZh": "经典葱油拌面",
+          "price": "$10.50",
+          "desc": "Shanghai-style dry noodles tossed with fragrant scallion oil.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Sesame Dan Dan Dry Noodles",
+          "nameZh": "担担面",
+          "price": "$10.50",
+          "desc": "Sesame dan dan noodles. Add minced pork +$2.00.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Soy Braised Beef Noodle Soup",
+          "nameZh": "酱香牛肉汤面",
+          "price": "$15.95",
+          "desc": "Tender braised beef in a rich soy broth over noodles."
+        },
+        {
+          "name": "Pork Wonton Noodle Soup",
+          "nameZh": "猪肉馄饨汤面",
+          "price": "$12.95",
+          "desc": "Handmade pork wontons with noodles in clear broth."
+        },
+        {
+          "name": "Pork & Shrimp Wonton Noodle Soup",
+          "nameZh": "猪肉鲜虾馄饨汤面",
+          "price": "$13.95",
+          "desc": "Pork and shrimp wontons with noodles in savory soup."
+        },
+        {
+          "name": "Minced Pork or Pork Chop Mix Noodle",
+          "nameZh": "肉末或猪扒拌葱油面",
+          "price": "$15.95",
+          "desc": "Scallion oil noodles topped with minced pork or pork chop."
+        },
+        {
+          "name": "Chicken Noodle Soup",
+          "nameZh": "鸡汤面",
+          "price": "$14.95",
+          "desc": "Comforting chicken broth with noodles."
+        },
+        {
+          "name": "Shanghai Chow Mein",
+          "nameZh": "上海炒粗面",
+          "price": "$14.95",
+          "desc": "Stir-fried thick noodles. Choice of chicken, pork, beef, or shrimp."
+        },
+        {
+          "name": "Pork Chop Noodle Soup",
+          "nameZh": "猪排汤面",
+          "price": "$15.95",
+          "desc": "Crispy pork chop served over noodles in broth."
+        }
+      ]
+    },
+    {
+      "name": "Veggies",
+      "nameZh": "时蔬",
+      "items": [
+        {
+          "name": "Kale Wok-Tossed with Garlic",
+          "nameZh": "蒜蓉羽衣甘蓝",
+          "price": "$13.50",
+          "desc": "Fresh kale stir-fried with garlic.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Broccoli Wok-Tossed with Garlic",
+          "nameZh": "蒜蓉西兰花",
+          "price": "$13.50",
+          "desc": "Broccoli florets wok-tossed with garlic.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Green Beans Wok-Tossed with Garlic",
+          "nameZh": "蒜蓉四季豆",
+          "price": "$14.50",
+          "desc": "Crisp green beans with fragrant garlic.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Baby Bok Choy Wok-Tossed with Garlic",
+          "nameZh": "蒜蓉上海菜",
+          "price": "$13.50",
+          "desc": "Tender baby bok choy with garlic.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Cabbage Wok-Tossed with Garlic",
+          "nameZh": "蒜蓉高丽菜",
+          "price": "$13.50",
+          "desc": "Shredded cabbage stir-fried with garlic.",
+          "tags": [
+            "Vegetarian"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "From the Wok",
+      "nameZh": "大厨小炒",
+      "items": [
+        {
+          "name": "Stir Fried Hot Pepper Pork",
+          "nameZh": "辣椒小炒肉",
+          "price": "$16.50",
+          "desc": "Wok-fried with hot peppers. Choice of chicken, pork, or beef.",
+          "tags": [
+            "Spicy"
+          ]
+        },
+        {
+          "name": "Osmanthus Honey Chicken",
+          "nameZh": "芝麻鸡",
+          "price": "$15.95",
+          "desc": "Crispy chicken glazed with osmanthus honey."
+        },
+        {
+          "name": "Golden Tofu Casserole",
+          "nameZh": "香煎豆腐煲",
+          "price": "$14.50",
+          "desc": "Pan-seared tofu braised in a savory casserole.",
+          "tags": [
+            "Vegetarian"
+          ]
+        },
+        {
+          "name": "Tomato Beef Casserole",
+          "nameZh": "番茄牛肉煲",
+          "price": "$17.25",
+          "desc": "Slow-braised beef with tomato in a hearty casserole."
+        },
+        {
+          "name": "Broccoli & Onion w. Brown Sauce",
+          "nameZh": "黑酱洋葱炒芥蓝",
+          "price": "$16.95",
+          "desc": "Broccoli and onion in brown sauce. Choice of chicken, pork, or beef."
+        },
+        {
+          "name": "Braised Pork Belly",
+          "nameZh": "红烧肉",
+          "price": "$16.50",
+          "desc": "Shanghai-style red-braised pork belly, rich and tender."
         }
       ]
     }

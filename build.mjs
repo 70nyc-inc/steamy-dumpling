@@ -44,6 +44,33 @@ function esc(s) {
     .replace(/"/g, "&quot;");
 }
 
+const TAG_META = {
+  Signature: { class: "signature", label: "★", title: "Signature" },
+  Vegetarian: { class: "vegetarian", label: "V", title: "Vegetarian" },
+  Spicy: { class: "spicy", label: "🌶", title: "Spicy" },
+};
+
+function itemTags(item) {
+  if (Array.isArray(item.tags)) return item.tags;
+  if (item.tag) return [item.tag];
+  return [];
+}
+
+function renderTags(tags, baseClass = "menu-tag") {
+  return (Array.isArray(tags) ? tags : itemTags({ tags }))
+    .map((tag) => {
+      const meta = TAG_META[tag] || { class: "default", label: tag, title: tag };
+      return `<span class="${baseClass} ${baseClass}--${meta.class}" title="${esc(meta.title || tag)}" aria-label="${esc(meta.title || tag)}">${esc(meta.label)}</span>`;
+    })
+    .join("");
+}
+
+function renderItemTags(item, baseClass = "menu-tag") {
+  const tags = itemTags(item);
+  if (!tags.length) return "";
+  return `<span class="menu-tags">${renderTags(tags, baseClass)}</span>`;
+}
+
 function url(slug) {
   return slug ? `${SITE}/${slug}/` : `${SITE}/`;
 }
@@ -218,12 +245,10 @@ function homeBody() {
   const signatures = menu.categories[0].items.slice(0, 3);
   const cards = signatures.map((item) => `
         <article class="dish-card">
-          <div class="dish-card-img" style="background-image:url('/assets/images/hero-poster.jpg')">
-            ${item.tag ? `<span class="dish-tag">${esc(item.tag)}</span>` : ""}
-          </div>
+          <div class="dish-card-img" style="background-image:url('/assets/images/hero-poster.jpg')"></div>
           <div class="dish-card-body">
             <h3>${esc(item.name)}</h3>
-            <p class="dish-name-zh">${esc(item.nameZh)}</p>
+            <p class="dish-name-zh">${esc(item.nameZh)}${renderItemTags(item, "dish-tag")}</p>
             <p>${esc(item.desc)}</p>
             <p class="dish-price">${esc(item.price)}</p>
           </div>
@@ -315,15 +340,14 @@ function menuBody() {
     const items = cat.items.map((item) => `
           <article class="menu-item">
             <div class="menu-item-head">
-              <h3>${esc(item.name)} <span class="menu-zh">${esc(item.nameZh)}</span></h3>
-              ${item.tag ? `<span class="menu-tag">${esc(item.tag)}</span>` : ""}
+              <h3>${esc(item.name)} <span class="menu-zh">${esc(item.nameZh)}</span>${renderItemTags(item)}</h3>
               <span class="menu-price">${esc(item.price)}</span>
             </div>
             <p>${esc(item.desc)}</p>
           </article>`).join("\n");
     return `
         <section class="menu-category" aria-labelledby="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">
-          <h2 id="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">${esc(cat.name)}</h2>
+          <h2 id="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">${esc(cat.name)}${cat.nameZh ? ` <span class="menu-cat-zh">${esc(cat.nameZh)}</span>` : ""}</h2>
           <div class="menu-list">${items}
           </div>
         </section>`;
@@ -334,6 +358,11 @@ function menuBody() {
       <div class="container">
         <h1>Menu</h1>
         <p>Shanghai soup dumplings and small plates, made fresh daily.</p>
+        <ul class="menu-legend" aria-label="Menu icons">
+          <li><span class="menu-tag menu-tag--signature" title="Signature">★</span> Signature</li>
+          <li><span class="menu-tag menu-tag--vegetarian" title="Vegetarian">V</span> Vegetarian</li>
+          <li><span class="menu-tag menu-tag--spicy" title="Spicy">🌶</span> Spicy</li>
+        </ul>
       </div>
     </section>
     <section class="section menu-page">

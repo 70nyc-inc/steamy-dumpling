@@ -1,23 +1,24 @@
 {
-  "name": "Steamy Dumpling",
-  "tagline": "Shaped by tradition, crafted by hand",
+  "name": "Steamy Dumplings",
+  "nameZh": "鼎雲軒",
+  "tagline": "Classic Shanghai soup dumplings, crafted by hand",
   "domain": "https://steamydumpling.com",
   "phone": "+1-718-000-0000",
   "phoneDisplay": "(718) 000-0000",
   "email": "hello@steamydumpling.com",
   "address": {
-    "street": "135-XX Roosevelt Avenue",
-    "city": "Flushing",
+    "street": "107 N Aurora St",
+    "city": "Ithaca",
     "state": "NY",
-    "zip": "11354",
+    "zip": "14850",
     "country": "US"
   },
-  "mapsUrl": "https://maps.google.com/?q=Flushing+NY",
+  "mapsUrl": "https://maps.google.com/?q=107+N+Aurora+St,+Ithaca,+NY+14850",
   "hours": [
     { "days": "Monday – Sunday", "open": "11:00 AM", "close": "9:00 PM" }
   ],
-  "transit": "7 train to Flushing–Main St",
-  "parking": "Street parking & nearby garages",
+  "transit": "Downtown Ithaca — walkable from The Commons",
+  "parking": "Street parking on Aurora St and nearby public lots",
   "social": {
     "instagram": "",
     "google": ""
@@ -29,13 +30,13 @@
   "story": {
     "title": "Crafted to Perfection",
     "paragraphs": [
-      "At Steamy Dumpling, every xiaolongbao is folded by hand using recipes rooted in Shanghai tradition. We select fresh pork, season with care, and steam each basket to order so the skin stays delicate and the broth stays rich.",
+      "At Steamy Dumplings, every xiaolongbao is folded by hand using recipes rooted in Shanghai tradition. We select fresh pork, season with care, and steam each basket to order so the skin stays delicate and the broth stays rich.",
       "From the first pleat to the final steam, we believe great dumplings are made with patience — never shortcuts."
     ]
   },
   "reviews": [
     {
-      "quote": "The soup bursts with every bite. Best xiaolongbao in Flushing.",
+      "quote": "The soup bursts with every bite. Best xiaolongbao in Ithaca.",
       "source": "Google Review"
     },
     {

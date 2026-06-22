@@ -290,29 +290,86 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   position: relative;
 }
 
-.dish-tag {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  background: var(--accent);
-  color: var(--white);
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.35rem 0.65rem;
-  border-radius: 2px;
-}
-
-.dish-card-body { padding: 1.5rem; }
-.dish-card-body h3 { color: var(--text); margin-bottom: 0.25rem; }
-.dish-card-body p { font-size: 0.92rem; margin-bottom: 0.75rem; }
+.dish-tags,
+.dish-card-img .dish-tags { display: none; }
 
 .dish-name-zh {
   font-size: 0.85rem;
   color: var(--text-muted);
   margin-bottom: 0.5rem !important;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
 }
+
+.dish-tag,
+.menu-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.2rem 0.4rem;
+  border-radius: 2px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.menu-tags {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  margin-left: 0.4rem;
+  vertical-align: middle;
+}
+
+.menu-tag--signature,
+.dish-tag--signature {
+  background: #f2c94c;
+  color: #4a3b08;
+  border-color: #e2b93b;
+}
+
+.menu-tag--vegetarian,
+.dish-tag--vegetarian {
+  background: #3d8b5a;
+  color: #ffffff;
+  border-color: #357a4f;
+}
+
+.menu-tag--spicy,
+.dish-tag--spicy {
+  background: #c0392b;
+  color: #ffffff;
+  border-color: #a93226;
+}
+
+.menu-legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  list-style: none;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.menu-legend li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.dish-card-body { padding: 1.5rem; }
+.dish-card-body h3 { color: var(--text); margin-bottom: 0.25rem; }
+.dish-card-body p { font-size: 0.92rem; margin-bottom: 0.75rem; }
 
 .dish-price {
   font-weight: 600;
@@ -443,6 +500,13 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   margin-bottom: 1.5rem;
 }
 
+.menu-cat-zh {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  color: var(--text-muted);
+}
+
 .menu-item {
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--border);
@@ -469,17 +533,6 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   font-size: 0.85rem;
   font-weight: 400;
   color: var(--text-muted);
-}
-
-.menu-tag {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
-  border: 1px solid var(--accent);
-  padding: 0.2rem 0.5rem;
-  border-radius: 2px;
 }
 
 .menu-price {
