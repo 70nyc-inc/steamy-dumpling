@@ -1,0 +1,75 @@
+{
+  "categories": [
+    {
+      "name": "Soup Dumplings",
+      "items": [
+        {
+          "name": "Pork Soup Dumplings",
+          "nameZh": "鲜肉汤包",
+          "price": "$8.99",
+          "desc": "Classic Shanghai xiaolongbao with savory pork and rich broth. 8 pieces.",
+          "tag": "Signature"
+        },
+        {
+          "name": "Crab Roe Soup Dumplings",
+          "nameZh": "蟹粉汤包",
+          "price": "$12.99",
+          "desc": "Seasonal crab roe folded into delicate wrappers. Limited daily. 6 pieces.",
+          "tag": "Seasonal"
+        },
+        {
+          "name": "Shanghai Xiaolongbao",
+          "nameZh": "上海小笼",
+          "price": "$7.99",
+          "desc": "Smaller, lighter dumplings with a clean, aromatic broth. 10 pieces.",
+          "tag": null
+        }
+      ]
+    },
+    {
+      "name": "Dim Sum & Sides",
+      "items": [
+        {
+          "name": "Pan-Fried Pork Buns",
+          "nameZh": "生煎包",
+          "price": "$7.49",
+          "desc": "Crisp bottom, soft top, juicy pork filling. 4 pieces.",
+          "tag": null
+        },
+        {
+          "name": "Scallion Pancake",
+          "nameZh": "葱油饼",
+          "price": "$5.99",
+          "desc": "Flaky, golden, and freshly griddled.",
+          "tag": null
+        },
+        {
+          "name": "Cucumber Salad",
+          "nameZh": "凉拌黄瓜",
+          "price": "$4.99",
+          "desc": "Light, refreshing, with sesame dressing.",
+          "tag": null
+        }
+      ]
+    },
+    {
+      "name": "Drinks",
+      "items": [
+        {
+          "name": "Jasmine Tea",
+          "nameZh": "茉莉花茶",
+          "price": "$2.99",
+          "desc": "Hot or iced.",
+          "tag": null
+        },
+        {
+          "name": "Soy Milk",
+          "nameZh": "豆浆",
+          "price": "$3.49",
+          "desc": "Fresh and lightly sweetened.",
+          "tag": null
+        }
+      ]
+    }
+  ]
+}

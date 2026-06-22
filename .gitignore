@@ -1,0 +1,12 @@
+.DS_Store
+.cursor/
+*.log
+.env
+.env.*
+node_modules/
+.wrangler/
+.dev.vars
+dist/
+
+# Source video (processed copy lives in public/assets/video/)
+../*.mov

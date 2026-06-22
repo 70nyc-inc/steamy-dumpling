@@ -1,0 +1,50 @@
+{
+  "name": "Steamy Dumpling",
+  "tagline": "Shaped by tradition, crafted by hand",
+  "domain": "https://steamydumpling.com",
+  "phone": "+1-718-000-0000",
+  "phoneDisplay": "(718) 000-0000",
+  "email": "hello@steamydumpling.com",
+  "address": {
+    "street": "135-XX Roosevelt Avenue",
+    "city": "Flushing",
+    "state": "NY",
+    "zip": "11354",
+    "country": "US"
+  },
+  "mapsUrl": "https://maps.google.com/?q=Flushing+NY",
+  "hours": [
+    { "days": "Monday – Sunday", "open": "11:00 AM", "close": "9:00 PM" }
+  ],
+  "transit": "7 train to Flushing–Main St",
+  "parking": "Street parking & nearby garages",
+  "social": {
+    "instagram": "",
+    "google": ""
+  },
+  "hero": {
+    "title": "Authentic Shanghai Soup Dumplings",
+    "subtitle": "Hand-folded daily · Thin skin · Rich broth"
+  },
+  "story": {
+    "title": "Crafted to Perfection",
+    "paragraphs": [
+      "At Steamy Dumpling, every xiaolongbao is folded by hand using recipes rooted in Shanghai tradition. We select fresh pork, season with care, and steam each basket to order so the skin stays delicate and the broth stays rich.",
+      "From the first pleat to the final steam, we believe great dumplings are made with patience — never shortcuts."
+    ]
+  },
+  "reviews": [
+    {
+      "quote": "The soup bursts with every bite. Best xiaolongbao in Flushing.",
+      "source": "Google Review"
+    },
+    {
+      "quote": "Thin wrappers, generous filling, always fresh from the steamer.",
+      "source": "Yelp"
+    },
+    {
+      "quote": "A must-visit for Shanghai-style soup dumplings.",
+      "source": "Local Guide"
+    }
+  ]
+}
