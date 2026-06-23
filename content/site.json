@@ -18,7 +18,7 @@
     "zip": "14850",
     "country": "US"
   },
-  "mapsUrl": "https://maps.google.com/?q=107+N+Aurora+St,+Ithaca,+NY+14850",
+  "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=107+N+Aurora+St,+Ithaca,+NY+14850",
   "hours": [
     { "days": "Monday – Sunday", "open": "11:00 AM", "close": "9:00 PM" }
   ],
