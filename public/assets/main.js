@@ -33,7 +33,13 @@
   if (toggle && links) {
     const backdrop = document.querySelector(".nav-backdrop");
 
+    function syncMobileNavOffset() {
+      if (!nav || !heroMobileMq.matches) return;
+      nav.style.setProperty("--mobile-nav-bar-h", `${nav.offsetHeight}px`);
+    }
+
     function setMenuOpen(open) {
+      if (open) syncMobileNavOffset();
       links.classList.toggle("is-open", open);
       nav?.classList.toggle("is-menu-open", open);
       toggle.classList.toggle("is-open", open);
@@ -59,7 +65,10 @@
 
     heroMobileMq.addEventListener("change", () => {
       if (!heroMobileMq.matches && links.classList.contains("is-open")) setMenuOpen(false);
+      syncMobileNavOffset();
     });
+
+    window.addEventListener("resize", syncMobileNavOffset, { passive: true });
   }
 
   const heroContent = document.querySelector(".hero-content");
