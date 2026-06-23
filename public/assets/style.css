@@ -326,7 +326,15 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .nav-links a.active { border-bottom: 1px solid currentColor; }
 
 .nav-backdrop {
-  display: none;
+  display: none !important;
+  appearance: none;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
 }
 
 .nav-toggle {
@@ -1393,18 +1401,24 @@ body.lightbox-open { overflow: hidden; }
   .btn-nav { display: none; }
 
   .nav-backdrop {
-    display: none;
+    display: none !important;
     position: fixed;
     inset: 0;
     z-index: 98;
+    width: auto;
+    height: auto;
     margin: 0;
     padding: 0;
     border: none;
     background: rgba(26, 26, 26, 0.35);
+    pointer-events: none;
     cursor: pointer;
   }
 
-  .nav-backdrop.is-visible { display: block; }
+  .nav-backdrop.is-visible {
+    display: block !important;
+    pointer-events: auto;
+  }
 
   body.nav-open { overflow: hidden; }
 
