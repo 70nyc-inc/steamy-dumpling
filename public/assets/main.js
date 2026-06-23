@@ -31,15 +31,34 @@
   onScroll();
 
   if (toggle && links) {
-    toggle.addEventListener("click", () => {
-      const open = links.classList.toggle("is-open");
+    const backdrop = document.querySelector(".nav-backdrop");
+
+    function setMenuOpen(open) {
+      links.classList.toggle("is-open", open);
+      nav?.classList.toggle("is-menu-open", open);
+      toggle.classList.toggle("is-open", open);
+      backdrop?.classList.toggle("is-visible", open);
+      document.body.classList.toggle("nav-open", open);
       toggle.setAttribute("aria-expanded", String(open));
+      toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    }
+
+    toggle.addEventListener("click", () => {
+      setMenuOpen(!links.classList.contains("is-open"));
     });
+
+    backdrop?.addEventListener("click", () => setMenuOpen(false));
+
     links.querySelectorAll("a").forEach((a) => {
-      a.addEventListener("click", () => {
-        links.classList.remove("is-open");
-        toggle.setAttribute("aria-expanded", "false");
-      });
+      a.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && links.classList.contains("is-open")) setMenuOpen(false);
+    });
+
+    heroMobileMq.addEventListener("change", () => {
+      if (!heroMobileMq.matches && links.classList.contains("is-open")) setMenuOpen(false);
     });
   }
 

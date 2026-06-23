@@ -176,9 +176,11 @@ function nav(active) {
         </button>
         <ul class="nav-links" role="list">
           ${links}
+          <li class="nav-links-cta"><a href="tel:${site.phone.replace(/\D/g, "")}" class="nav-call-link">Call to Order</a></li>
         </ul>
         <a href="tel:${site.phone.replace(/\D/g, "")}" class="btn btn-nav">Call to Order</a>
       </div>
+      <button type="button" class="nav-backdrop" aria-label="Close menu" tabindex="-1"></button>
     </nav>`;
 }
 
