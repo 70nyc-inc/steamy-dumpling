@@ -325,6 +325,10 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .nav-links a.active { opacity: 1; }
 .nav-links a.active { border-bottom: 1px solid currentColor; }
 
+.nav-backdrop {
+  display: none;
+}
+
 .nav-toggle {
   display: none;
   flex-direction: column;
