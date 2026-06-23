@@ -137,12 +137,17 @@ function copyDir(src, dest) {
   }
 }
 
-function logoLink(imgClass = "logo-img") {
+function logoLink(imgClass = "logo-img", isHome = false) {
   const scrolledLogo = site.logo || "/assets/images/logo_din_yun_feng_2.png";
   if (imgClass.includes("footer")) {
     const footerLogo = site.footerLogo || scrolledLogo;
     return `<a href="/" class="logo" aria-label="${esc(site.name)}">
           <img src="${esc(footerLogo)}" alt="" class="${esc(imgClass)}" width="733" height="482" decoding="async" />
+        </a>`;
+  }
+  if (!isHome) {
+    return `<a href="/" class="logo logo--inner" aria-label="${esc(site.name)}">
+          <img src="${esc(scrolledLogo)}" alt="" class="logo-img logo-img--primary" width="733" height="82" decoding="async" />
         </a>`;
   }
   const topLogo = site.navLogo || scrolledLogo;
@@ -157,14 +162,15 @@ function logoLink(imgClass = "logo-img") {
 }
 
 function nav(active) {
+  const isHome = active === "" || active === "home";
   const links = NAV.map(([slug, label]) => {
     const cls = slug === active ? ' class="active"' : "";
     return `<li><a href="${pathHref(slug)}"${cls}>${label}</a></li>`;
   }).join("\n          ");
   return `
-    <nav class="site-nav" aria-label="Main navigation">
+    <nav class="site-nav${isHome ? "" : " site-nav--inner"}" aria-label="Main navigation">
       <div class="container nav-inner">
-        ${logoLink()}
+        ${logoLink("logo-img", isHome)}
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -382,7 +388,7 @@ function homeBody() {
 
   return `
     <section class="hero" aria-label="Introduction">
-      <video class="hero-video" autoplay muted loop playsinline poster="/assets/images/hero-poster.jpg" data-src-desktop="/assets/video/hero.mp4" data-src-mobile="/assets/video/hero-mobile.mp4">
+      <video class="hero-video" autoplay muted loop playsinline poster="/assets/images/hero-poster.jpg" data-src-desktop="/assets/video/hero.mp4" data-src-mobile="/assets/video/hero-mobile.mp4" data-poster-desktop="/assets/images/hero-poster.jpg" data-poster-mobile="/assets/images/hero-poster-mobile.jpg">
         <source src="/assets/video/hero.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>

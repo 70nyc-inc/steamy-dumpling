@@ -13,8 +13,15 @@
     const src = heroMobileMq.matches
       ? heroVideo.dataset.srcMobile
       : heroVideo.dataset.srcDesktop;
-    if (!src || heroVideo.dataset.activeSrc === src) return;
+    const poster = heroMobileMq.matches
+      ? heroVideo.dataset.posterMobile
+      : heroVideo.dataset.posterDesktop;
+    if (!src) return;
+    const needsSrc = heroVideo.dataset.activeSrc !== src;
+    const needsPoster = poster && heroVideo.getAttribute("poster") !== poster;
+    if (!needsSrc && !needsPoster) return;
     heroVideo.dataset.activeSrc = src;
+    if (poster) heroVideo.setAttribute("poster", poster);
     const time = heroVideo.currentTime || 0;
     heroVideo.src = src;
     heroVideo.load();
