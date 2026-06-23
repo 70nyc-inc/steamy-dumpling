@@ -269,6 +269,24 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   height: 72px;
 }
 
+body:not(.page-home) .logo-brand--top {
+  display: none;
+}
+
+body:not(.page-home) .site-nav .logo {
+  background: var(--white);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+}
+
+body:not(.page-home) .logo-img--scrolled {
+  display: block;
+  height: 100px;
+}
+
+body:not(.page-home) .site-nav.is-scrolled .logo-img--scrolled {
+  height: 72px;
+}
+
 .footer-brand .logo {
   background: transparent;
   padding: 0;
