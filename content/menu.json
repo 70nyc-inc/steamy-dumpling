@@ -11,7 +11,8 @@
           "desc": "6 pieces. Shanghai-style xiaolongbao with savory pork and rich broth.",
           "tags": [
             "Signature"
-          ]
+          ],
+          "image": "/assets/images/soup-dumpling.png"
         },
         {
           "name": "Crabmeat & Pork Soup Dumplings",
@@ -20,31 +21,36 @@
           "desc": "6 pieces. Seasonal crab roe folded into delicate handmade wrappers.",
           "tags": [
             "Signature"
-          ]
+          ],
+          "image": "/assets/images/soup-dumpling.png"
         },
         {
           "name": "Chicken Soup Dumplings",
           "nameZh": "鸡肉小笼汤包",
           "price": "$12.95",
-          "desc": "6 pieces. Light, aromatic chicken filling with a clean broth."
+          "desc": "6 pieces. Light, aromatic chicken filling with a clean broth.",
+          "image": "/assets/images/soup-dumpling.png"
         },
         {
           "name": "Truffle Pork Soup Dumplings",
           "nameZh": "黑松露小笼汤包",
           "price": "$15.95",
-          "desc": "6 pieces. Black truffle and pork in handmade soup dumplings."
+          "desc": "6 pieces. Black truffle and pork in handmade soup dumplings.",
+          "image": "/assets/images/soup-dumpling.png"
         },
         {
           "name": "Shrimp & Pork Soup Dumplings",
           "nameZh": "鲜虾猪肉小笼汤包",
           "price": "$13.50",
-          "desc": "6 pieces. Fresh shrimp and pork with a sweet, juicy filling."
+          "desc": "6 pieces. Fresh shrimp and pork with a sweet, juicy filling.",
+          "image": "/assets/images/soup-dumpling.png"
         },
         {
           "name": "Pan Seared Pork Bao",
           "nameZh": "招牌爆汁生煎包",
           "price": "$8.95",
           "desc": "4 pieces. Crisp bottom, soft top, juicy pork — Shanghai pan-fried buns.",
+          "image": "/assets/images/pan-seared-pork-bao.png",
           "tags": [
             "Signature"
           ]
@@ -56,9 +62,11 @@
           "desc": "5 pieces. Savory braised pork in fluffy steamed buns.",
           "tags": [
             "Signature"
-          ]
+          ],
+          "image": "/assets/images/classic-savory-pork-bun.png"
         }
-      ]
+      ],
+      "image": "/assets/images/soup-dumpling.png"
     },
     {
       "name": "Savory Starters",
@@ -72,7 +80,8 @@
           "tags": [
             "Signature",
             "Spicy"
-          ]
+          ],
+          "image": "/assets/images/spicy-cucumber-salad.png"
         },
         {
           "name": "Salt & Pepper Edamame",
@@ -81,7 +90,8 @@
           "desc": "Steamed edamame tossed with salt and pepper.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/salt-pepper-edamame.png"
         },
         {
           "name": "Black Wood Ear Mushroom",
@@ -90,25 +100,29 @@
           "desc": "Wood ear mushroom in a tangy vinegar dressing. Served cold.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/black-wood-ear-mushroom.png"
         },
         {
           "name": "Soy Braised Beef",
           "nameZh": "酱香牛肉",
           "price": "$12.95",
-          "desc": "Thinly sliced beef in house soy braising sauce. Served cold."
+          "desc": "Thinly sliced beef in house soy braising sauce. Served cold.",
+          "image": "/assets/images/soy-braised-beef.png"
         },
         {
           "name": "Cheesy Fried Chicken Cutlet",
           "nameZh": "芝士炸鸡排",
           "price": "$13.99",
-          "desc": "Crispy fried chicken cutlet with melted cheese."
+          "desc": "Crispy fried chicken cutlet with melted cheese.",
+          "image": "/assets/images/cheesy-fried-chicken-cutlet.png"
         },
         {
           "name": "Crispy Pork Chop",
           "nameZh": "炸猪排",
           "price": "$8.99",
-          "desc": "Golden fried pork chop, Shanghai-style."
+          "desc": "Golden fried pork chop, Shanghai-style.",
+          "image": "/assets/images/crispy-pork-chop.png"
         },
         {
           "name": "Fried Spring Roll",
@@ -117,19 +131,22 @@
           "desc": "2 pieces. Crispy Shanghai spring rolls.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/fried-spring-roll.png"
         },
         {
           "name": "Fried Pork Wonton",
           "nameZh": "炸云吞",
           "price": "$7.95",
-          "desc": "6 pieces. Fried wontons with a light, crispy shell."
+          "desc": "6 pieces. Fried wontons with a light, crispy shell.",
+          "image": "/assets/images/fried-pork-wonton.png"
         },
         {
           "name": "Beef Scallion Roll",
           "nameZh": "牛肉卷饼",
           "price": "$11.95",
-          "desc": "Flaky scallion pancake rolled with seasoned beef."
+          "desc": "Flaky scallion pancake rolled with seasoned beef.",
+          "image": "/assets/images/beef-scallion-roll.png"
         },
         {
           "name": "Pork Wonton in Red Chili Sauce",
@@ -139,7 +156,8 @@
           "tags": [
             "Signature",
             "Spicy"
-          ]
+          ],
+          "image": "/assets/images/pork-wonton-red-chili-sauce.png"
         },
         {
           "name": "Shrimp & Pork Wonton in Red Chili Sauce",
@@ -148,13 +166,15 @@
           "desc": "8 pieces. Shrimp and pork wontons in red chili sauce.",
           "tags": [
             "Spicy"
-          ]
+          ],
+          "image": "/assets/images/pork-wonton-red-chili-sauce.png"
         },
         {
           "name": "Tangy Glazed Pork Ribs",
           "nameZh": "糖醋小排",
           "price": "$12.95",
-          "desc": "Sweet and tangy glazed pork spare ribs."
+          "desc": "Sweet and tangy glazed pork spare ribs.",
+          "image": "/assets/images/tangy-glazed-pork-ribs.png"
         }
       ]
     },
@@ -166,13 +186,15 @@
           "name": "Pork Wonton Soup",
           "nameZh": "鲜肉馄饨汤",
           "price": "$6.95",
-          "desc": "5 pieces. Handmade pork wontons in clear broth."
+          "desc": "5 pieces. Handmade pork wontons in clear broth.",
+          "image": "/assets/images/pork-wonton-soup.png"
         },
         {
           "name": "Pork & Shrimp Wonton Soup",
           "nameZh": "鲜肉虾馄饨汤",
           "price": "$7.95",
-          "desc": "5 pieces. Pork and shrimp wontons in savory soup."
+          "desc": "5 pieces. Pork and shrimp wontons in savory soup.",
+          "image": "/assets/images/pork-wonton-soup.png"
         },
         {
           "name": "Hot & Sour Soup",
@@ -181,13 +203,15 @@
           "desc": "Classic hot and sour soup with tofu and vegetables.",
           "tags": [
             "Spicy"
-          ]
+          ],
+          "image": "/assets/images/hot-sour-soup.png"
         },
         {
           "name": "Steamed Beef Short Ribs Soup",
           "nameZh": "圆盅顿上汤牛排骨汤",
           "price": "$12.95",
-          "desc": "Slow-steamed beef short ribs in a rich, clear broth."
+          "desc": "Slow-steamed beef short ribs in a rich, clear broth.",
+          "image": "/assets/images/steamed-beef-short-ribs-soup.png"
         }
       ]
     },
@@ -199,7 +223,8 @@
           "name": "Classic Yang Fried Rice",
           "nameZh": "经典炒饭",
           "price": "$13.95",
-          "desc": "Choice of chicken, pork, shrimp, beef, or vegetable."
+          "desc": "Choice of chicken, pork, shrimp, beef, or vegetable.",
+          "image": "/assets/images/classic-yang-fried-rice.png"
         },
         {
           "name": "Spicy Minced Pork Rice Bowl",
@@ -208,13 +233,15 @@
           "desc": "Fragrant minced pork over steamed rice with chili.",
           "tags": [
             "Spicy"
-          ]
+          ],
+          "image": "/assets/images/spicy-minced-pork-rice-bowl.png"
         },
         {
           "name": "Pork Chop Fried Rice",
           "nameZh": "香煎猪排炒饭",
           "price": "$15.95",
-          "desc": "Fried rice topped with a crispy pan-seared pork chop."
+          "desc": "Fried rice topped with a crispy pan-seared pork chop.",
+          "image": "/assets/images/pork-chop-fried-rice.png"
         }
       ]
     },
@@ -226,13 +253,15 @@
           "name": "Pork & Cabbage Steamed Dumplings",
           "nameZh": "白菜猪肉蒸饺",
           "price": "$12.50",
-          "desc": "8 pieces. Handmade steamed dumplings with pork and cabbage."
+          "desc": "8 pieces. Handmade steamed dumplings with pork and cabbage.",
+          "image": "/assets/images/steamed-dumpling.png"
         },
         {
           "name": "Pork & Shrimp & Cabbage Steamed Dumplings",
           "nameZh": "鲜虾白菜猪肉蒸饺",
           "price": "$13.50",
-          "desc": "8 pieces. Pork, shrimp and cabbage in delicate wrappers."
+          "desc": "8 pieces. Pork, shrimp and cabbage in delicate wrappers.",
+          "image": "/assets/images/steamed-dumpling.png"
         },
         {
           "name": "Vegetable Steamed Dumplings",
@@ -241,27 +270,32 @@
           "desc": "8 pieces. Seasonal vegetables folded by hand.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/steamed-dumpling.png"
         },
         {
           "name": "Pork Potsticker",
           "nameZh": "猪肉锅贴",
           "price": "$10.95",
-          "desc": "6 pieces. Pan-fried pork potstickers with a crisp bottom."
+          "desc": "6 pieces. Pan-fried pork potstickers with a crisp bottom.",
+          "image": "/assets/images/potsticker.png"
         },
         {
           "name": "Corn & Pork Potsticker",
           "nameZh": "玉米猪肉锅贴",
           "price": "$10.95",
-          "desc": "6 pieces. Sweet corn and pork in golden potstickers."
+          "desc": "6 pieces. Sweet corn and pork in golden potstickers.",
+          "image": "/assets/images/potsticker.png"
         },
         {
           "name": "Shrimp & Pork Potsticker",
           "nameZh": "鲜虾猪肉锅贴",
           "price": "$11.95",
-          "desc": "6 pieces. Shrimp and pork with a savory, juicy filling."
+          "desc": "6 pieces. Shrimp and pork with a savory, juicy filling.",
+          "image": "/assets/images/potsticker.png"
         }
-      ]
+      ],
+      "image": "/assets/images/steamed-dumpling.png"
     },
     {
       "name": "Noodles",
@@ -274,7 +308,8 @@
           "desc": "Shanghai-style dry noodles tossed with fragrant scallion oil.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/classic-scallion-oil-dry-noodles.png"
         },
         {
           "name": "Sesame Dan Dan Dry Noodles",
@@ -283,49 +318,57 @@
           "desc": "Sesame dan dan noodles. Add minced pork +$2.00.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/sesame-dan-dan-dry-noodles.png"
         },
         {
           "name": "Soy Braised Beef Noodle Soup",
           "nameZh": "酱香牛肉汤面",
           "price": "$15.95",
-          "desc": "Tender braised beef in a rich soy broth over noodles."
+          "desc": "Tender braised beef in a rich soy broth over noodles.",
+          "image": "/assets/images/soy-braised-beef-noodle-soup.png"
         },
         {
           "name": "Pork Wonton Noodle Soup",
           "nameZh": "猪肉馄饨汤面",
           "price": "$12.95",
-          "desc": "Handmade pork wontons with noodles in clear broth."
+          "desc": "Handmade pork wontons with noodles in clear broth.",
+          "image": "/assets/images/pork-wonton-noodle-soup.png"
         },
         {
           "name": "Pork & Shrimp Wonton Noodle Soup",
           "nameZh": "猪肉鲜虾馄饨汤面",
           "price": "$13.95",
-          "desc": "Pork and shrimp wontons with noodles in savory soup."
+          "desc": "Pork and shrimp wontons with noodles in savory soup.",
+          "image": "/assets/images/pork-wonton-noodle-soup.png"
         },
         {
           "name": "Minced Pork or Pork Chop Mix Noodle",
           "nameZh": "肉末或猪扒拌葱油面",
           "price": "$15.95",
-          "desc": "Scallion oil noodles topped with minced pork or pork chop."
+          "desc": "Scallion oil noodles topped with minced pork or pork chop.",
+          "image": "/assets/images/minced-pork-pork-chop-mix-noodle.png"
         },
         {
           "name": "Chicken Noodle Soup",
           "nameZh": "鸡汤面",
           "price": "$14.95",
-          "desc": "Comforting chicken broth with noodles."
+          "desc": "Comforting chicken broth with noodles.",
+          "image": "/assets/images/chicken-noodle-soup.png"
         },
         {
           "name": "Shanghai Chow Mein",
           "nameZh": "上海炒粗面",
           "price": "$14.95",
-          "desc": "Stir-fried thick noodles. Choice of chicken, pork, beef, or shrimp."
+          "desc": "Stir-fried thick noodles. Choice of chicken, pork, beef, or shrimp.",
+          "image": "/assets/images/shanghai-chow-mein.png"
         },
         {
           "name": "Pork Chop Noodle Soup",
           "nameZh": "猪排汤面",
           "price": "$15.95",
-          "desc": "Crispy pork chop served over noodles in broth."
+          "desc": "Crispy pork chop served over noodles in broth.",
+          "image": "/assets/images/pork-chop-noodle-soup.png"
         }
       ]
     },
@@ -340,7 +383,8 @@
           "desc": "Fresh kale stir-fried with garlic.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/kale-wok.png"
         },
         {
           "name": "Broccoli Wok-Tossed with Garlic",
@@ -349,7 +393,8 @@
           "desc": "Broccoli florets wok-tossed with garlic.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/broccoli-wok.png"
         },
         {
           "name": "Green Beans Wok-Tossed with Garlic",
@@ -358,7 +403,8 @@
           "desc": "Crisp green beans with fragrant garlic.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/green-beans-wok.png"
         },
         {
           "name": "Baby Bok Choy Wok-Tossed with Garlic",
@@ -367,7 +413,8 @@
           "desc": "Tender baby bok choy with garlic.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/baby-bok-choy-wok.png"
         },
         {
           "name": "Cabbage Wok-Tossed with Garlic",
@@ -376,7 +423,8 @@
           "desc": "Shredded cabbage stir-fried with garlic.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/cabbage-wok.png"
         }
       ]
     },
@@ -391,13 +439,15 @@
           "desc": "Wok-fried with hot peppers. Choice of chicken, pork, or beef.",
           "tags": [
             "Spicy"
-          ]
+          ],
+          "image": "/assets/images/stir-fried-hot-pepper-pork.png"
         },
         {
           "name": "Osmanthus Honey Chicken",
           "nameZh": "芝麻鸡",
           "price": "$15.95",
-          "desc": "Crispy chicken glazed with osmanthus honey."
+          "desc": "Crispy chicken glazed with osmanthus honey.",
+          "image": "/assets/images/osmanthus-honey-chicken.png"
         },
         {
           "name": "Golden Tofu Casserole",
@@ -406,25 +456,29 @@
           "desc": "Pan-seared tofu braised in a savory casserole.",
           "tags": [
             "Vegetarian"
-          ]
+          ],
+          "image": "/assets/images/golden-tofu-casserole.png"
         },
         {
           "name": "Tomato Beef Casserole",
           "nameZh": "番茄牛肉煲",
           "price": "$17.25",
-          "desc": "Slow-braised beef with tomato in a hearty casserole."
+          "desc": "Slow-braised beef with tomato in a hearty casserole.",
+          "image": "/assets/images/tomato-beef-casserole.png"
         },
         {
           "name": "Broccoli & Onion w. Brown Sauce",
           "nameZh": "黑酱洋葱炒芥蓝",
           "price": "$16.95",
-          "desc": "Broccoli and onion in brown sauce. Choice of chicken, pork, or beef."
+          "desc": "Broccoli and onion in brown sauce. Choice of chicken, pork, or beef.",
+          "image": "/assets/images/broccoli-onion-brown-sauce.png"
         },
         {
           "name": "Braised Pork Belly",
           "nameZh": "红烧肉",
           "price": "$16.50",
-          "desc": "Shanghai-style red-braised pork belly, rich and tender."
+          "desc": "Shanghai-style red-braised pork belly, rich and tender.",
+          "image": "/assets/images/braised-pork-belly.png"
         }
       ]
     }

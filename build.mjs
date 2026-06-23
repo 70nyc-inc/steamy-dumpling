@@ -13,6 +13,44 @@ const CONTENT = path.join(ROOT, "content");
 const site = JSON.parse(fs.readFileSync(path.join(CONTENT, "site.json"), "utf8"));
 const menu = JSON.parse(fs.readFileSync(path.join(CONTENT, "menu.json"), "utf8"));
 
+function collectLightboxItems() {
+  const items = [];
+  for (const cat of menu.categories) {
+    for (const item of cat.items) {
+      if (item.image) {
+        items.push({
+          image: item.image,
+          name: item.name,
+          nameZh: item.nameZh || "",
+          desc: item.desc || "",
+          price: item.price || "",
+        });
+      }
+    }
+  }
+  return items;
+}
+
+const LIGHTBOX_ITEMS = collectLightboxItems();
+const LIGHTBOX_INDEX = new Map(LIGHTBOX_ITEMS.map((item, index) => [item.name, index]));
+
+function lightboxIndexFor(item) {
+  return LIGHTBOX_INDEX.get(item.name) ?? -1;
+}
+
+function firstCategoryLightboxIndex(cat) {
+  for (const item of cat.items) {
+    const index = lightboxIndexFor(item);
+    if (index >= 0) return index;
+  }
+  return -1;
+}
+
+function lightboxTrigger(index, inner, className, ariaLabel) {
+  if (index < 0) return inner;
+  return `<button type="button" class="${className} js-lightbox-open" data-lightbox-index="${index}" aria-label="${esc(ariaLabel)}">${inner}</button>`;
+}
+
 const SITE = site.domain.replace(/\/$/, "");
 const ADDR = `${site.address.street}, ${site.address.city}, ${site.address.state} ${site.address.zip}`;
 const ADDR_LINE = `${site.address.city}, ${site.address.state}`;
@@ -71,6 +109,10 @@ function renderItemTags(item, baseClass = "menu-tag") {
   return `<span class="menu-tags">${renderTags(tags, baseClass)}</span>`;
 }
 
+function itemImage(item, category) {
+  return item.image || category?.image || "/assets/images/hero-poster.jpg";
+}
+
 function url(slug) {
   return slug ? `${SITE}/${slug}/` : `${SITE}/`;
 }
@@ -95,6 +137,25 @@ function copyDir(src, dest) {
   }
 }
 
+function logoLink(imgClass = "logo-img") {
+  const scrolledLogo = site.logo || "/assets/images/logo_din_yun_feng_2.png";
+  if (imgClass.includes("footer")) {
+    const footerLogo = site.footerLogo || scrolledLogo;
+    return `<a href="/" class="logo" aria-label="${esc(site.name)}">
+          <img src="${esc(footerLogo)}" alt="" class="${esc(imgClass)}" width="733" height="482" decoding="async" />
+        </a>`;
+  }
+  const topLogo = site.navLogo || scrolledLogo;
+  const wordmark = site.navWordmark || site.name;
+  return `<a href="/" class="logo" aria-label="${esc(site.name)}">
+          <span class="logo-brand logo-brand--top">
+            <img src="${esc(topLogo)}" alt="" class="logo-img logo-img--top" width="733" height="283" decoding="async" />
+            <span class="logo-wordmark">${esc(wordmark)}</span>
+          </span>
+          <img src="${esc(scrolledLogo)}" alt="" class="logo-img logo-img--scrolled" width="733" height="482" decoding="async" />
+        </a>`;
+}
+
 function nav(active) {
   const links = NAV.map(([slug, label]) => {
     const cls = slug === active ? ' class="active"' : "";
@@ -103,7 +164,7 @@ function nav(active) {
   return `
     <nav class="site-nav" aria-label="Main navigation">
       <div class="container nav-inner">
-        <a href="/" class="logo">${esc(site.name)}</a>
+        ${logoLink()}
         <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
           <span></span><span></span><span></span>
         </button>
@@ -123,7 +184,7 @@ function footer() {
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          <a href="/" class="logo">${esc(site.name)}</a>
+          ${logoLink("logo-img logo-img--footer")}
           <p class="footer-tagline">${esc(site.tagline)}</p>
         </div>
         <div class="footer-nav">
@@ -226,7 +287,34 @@ function schemaRestaurant() {
   return `<script type="application/ld+json">${JSON.stringify(json)}</script>`;
 }
 
-function pageShell(active, body, opts) {
+function lightboxMarkup(items) {
+  if (!items.length) return "";
+  return `
+  <script type="application/json" id="lightbox-data">${JSON.stringify(items)}</script>
+  <div class="lightbox" id="lightbox" hidden aria-hidden="true" role="dialog" aria-modal="true" aria-label="Dish photo viewer">
+    <div class="lightbox-backdrop" data-lightbox-close tabindex="-1"></div>
+    <div class="lightbox-panel" role="document">
+      <button type="button" class="lightbox-close" data-lightbox-close aria-label="Close">&times;</button>
+      <button type="button" class="lightbox-nav lightbox-prev" aria-label="Previous dish">&lsaquo;</button>
+      <button type="button" class="lightbox-nav lightbox-next" aria-label="Next dish">&rsaquo;</button>
+      <figure class="lightbox-figure">
+        <div class="lightbox-media">
+          <img class="lightbox-img" src="" alt="" />
+        </div>
+        <figcaption class="lightbox-caption">
+          <h3 class="lightbox-title"></h3>
+          <p class="lightbox-zh"></p>
+          <p class="lightbox-desc"></p>
+          <p class="lightbox-price"></p>
+          <p class="lightbox-counter" aria-live="polite"></p>
+        </figcaption>
+      </figure>
+    </div>
+  </div>`;
+}
+
+function pageShell(active, body, opts, extraLightbox = []) {
+  const lightboxItems = [...LIGHTBOX_ITEMS, ...extraLightbox];
   return `${head(opts)}
 <body class="page-${active || "home"}">
   ${nav(active)}
@@ -234,6 +322,7 @@ function pageShell(active, body, opts) {
 ${body}
   </main>
   ${footer()}
+  ${lightboxMarkup(lightboxItems)}
   <script src="/assets/main.js"></script>
 </body>
 </html>`;
@@ -241,18 +330,42 @@ ${body}
 
 // ── page bodies ──────────────────────────────────────────────────────
 
+function heroHighlightsHtml() {
+  const items = site.hero.highlights?.length
+    ? site.hero.highlights
+    : site.hero.subtitle.split(/\s*·\s*/).filter(Boolean);
+  return items.map((text) =>
+    `<span class="hero-highlight"><span class="hero-highlight-mark" aria-hidden="true">✦</span>${esc(text)}</span>`,
+  ).join("");
+}
+
 function homeBody() {
-  const signatures = menu.categories[0].items.slice(0, 3);
-  const cards = signatures.map((item) => `
-        <article class="dish-card">
-          <div class="dish-card-img" style="background-image:url('/assets/images/hero-poster.jpg')"></div>
+  const xlb = menu.categories[0];
+  const signatures = xlb.items.slice(0, 3);
+  const cards = signatures.map((item) => {
+    const img = itemImage(item, xlb);
+    const index = lightboxIndexFor(item);
+    const imgBtn = lightboxTrigger(
+      index,
+      "",
+      "dish-card-img",
+      `View larger photo of ${item.name}`,
+    );
+    const imgStyle = ` style="background-image:url('${img}')"`;
+    const cardImg = index >= 0
+      ? imgBtn.replace('class="dish-card-img js-lightbox-open"', `class="dish-card-img js-lightbox-open"${imgStyle}`)
+      : `<div class="dish-card-img"${imgStyle}></div>`;
+    return `
+        <article class="dish-card reveal">
+          ${cardImg}
           <div class="dish-card-body">
             <h3>${esc(item.name)}</h3>
             <p class="dish-name-zh">${esc(item.nameZh)}${renderItemTags(item, "dish-tag")}</p>
             <p>${esc(item.desc)}</p>
             <p class="dish-price">${esc(item.price)}</p>
           </div>
-        </article>`).join("\n");
+        </article>`;
+  }).join("\n");
 
   const reviews = site.reviews.map((r) => `
         <blockquote class="review-card">
@@ -261,76 +374,101 @@ function homeBody() {
           <cite>${esc(r.source)}</cite>
         </blockquote>`).join("\n");
 
+  const hoursRows = site.hours.map((h) => `
+            <div class="hours-row">
+              <dt>${esc(h.days)}</dt>
+              <dd>${esc(h.open)} – ${esc(h.close)}</dd>
+            </div>`).join("");
+
   return `
     <section class="hero" aria-label="Introduction">
-      <video class="hero-video" autoplay muted loop playsinline poster="/assets/images/hero-poster.jpg">
+      <video class="hero-video" autoplay muted loop playsinline poster="/assets/images/hero-poster.jpg" data-src-desktop="/assets/video/hero.mp4" data-src-mobile="/assets/video/hero-mobile.mp4">
         <source src="/assets/video/hero.mp4" type="video/mp4" />
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content container">
-        <p class="hero-eyebrow">${esc(site.tagline)}</p>
-        ${site.nameZh ? `<p class="hero-name-zh" lang="zh-Hant">${esc(site.nameZh)}</p>` : ""}
-        <h1>${esc(site.hero.title)}</h1>
-        <p class="hero-sub">${esc(site.hero.subtitle)}</p>
-        <div class="hero-cta">
-          <a href="/menu/" class="btn btn-primary">Explore Menu</a>
-          <a href="${esc(site.mapsUrl)}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Get Directions</a>
+        <p class="hero-eyebrow hero-animate">${esc(site.hero.eyebrow || site.tagline)}</p>
+        <div class="hero-logo hero-animate">
+          <img src="${esc(site.heroLogo)}" alt="${esc(site.nameZh || site.name)}" class="hero-logo-img" width="733" height="283" loading="eager" />
+        </div>
+        <h1 class="hero-title-en hero-animate">${esc(site.hero.title)}</h1>
+        <p class="hero-sub hero-animate">${heroHighlightsHtml()}</p>
+        <div class="hero-cta hero-animate">
+          <a href="/menu/" class="btn btn-primary">View Menu</a>
+          <a href="tel:${site.phone.replace(/\D/g, "")}" class="btn btn-outline">Call to Order</a>
         </div>
       </div>
+      <a href="#story" class="hero-scroll" aria-label="Scroll to our story">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <path d="M10 14L4 8h12L10 14z" fill="currentColor"/>
+        </svg>
+      </a>
     </section>
 
-    <section class="section signatures" aria-labelledby="signatures-title">
-      <div class="container">
-        <div class="section-head">
-          <h2 id="signatures-title">Crafted to Perfection</h2>
-          <p>Our most-loved baskets, steamed fresh throughout the day.</p>
-        </div>
-        <div class="dish-grid">${cards}
-        </div>
-        <p class="section-cta"><a href="/menu/" class="link-arrow">View full menu</a></p>
-      </div>
-    </section>
-
-    <section class="section story" aria-labelledby="story-title">
+    <section class="section story" id="story" aria-labelledby="story-title">
       <div class="container story-grid">
-        <div class="story-text">
+        <div class="story-text reveal">
           <h2 id="story-title">${esc(site.story.title)}</h2>
           ${site.story.paragraphs.map((p) => `<p>${esc(p)}</p>`).join("\n          ")}
           <a href="/about/" class="link-arrow">Our story</a>
         </div>
-        <div class="story-media">
-          <img src="/assets/images/hero-poster.jpg" alt="Hand-folded Shanghai soup dumplings at ${esc(site.name)}" width="640" height="480" loading="lazy" />
+        <div class="story-media reveal">
+          ${lightboxTrigger(
+            0,
+            `<img src="/assets/images/soup-dumpling.png" alt="Hand-folded Shanghai soup dumplings at ${esc(site.name)}" width="640" height="480" loading="lazy" />`,
+            "story-media-btn",
+            "View larger photo of soup dumplings",
+          )}
         </div>
       </div>
     </section>
 
-    <section class="section visit" aria-labelledby="visit-title">
-      <div class="container visit-grid">
-        <div class="visit-info">
-          <h2 id="visit-title">Visit Us</h2>
-          <address>
-            <p class="visit-addr">${esc(ADDR)}</p>
-          </address>
-          <dl class="hours-list">
-            ${site.hours.map((h) => `
-            <div class="hours-row">
-              <dt>${esc(h.days)}</dt>
-              <dd>${esc(h.open)} – ${esc(h.close)}</dd>
-            </div>`).join("")}
-          </dl>
-          <p class="visit-meta">${esc(site.transit)}</p>
-          <a href="${esc(site.mapsUrl)}" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Get Directions</a>
+    <section class="section signatures" id="signatures" aria-labelledby="signatures-title">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2 id="signatures-title">From the Steamer</h2>
+          <p>Our most-loved baskets, steamed fresh throughout the day.</p>
         </div>
-        <div class="visit-map">
-          <iframe title="Map to ${esc(site.name)}" src="https://maps.google.com/maps?q=${encodeURIComponent(ADDR)}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="dish-grid">${cards}
         </div>
+        <p class="section-cta reveal"><a href="/menu/" class="link-arrow">View full menu</a></p>
       </div>
     </section>
 
     <section class="section reviews" aria-labelledby="reviews-title">
       <div class="container">
-        <h2 id="reviews-title">What Guests Say</h2>
-        <div class="review-grid">${reviews}
+        <h2 id="reviews-title" class="reveal">What Guests Say</h2>
+        <div class="review-grid">${reviews.replace(/<blockquote class="review-card"/g, '<blockquote class="review-card reveal"')}
+        </div>
+      </div>
+    </section>
+
+    <section class="section visit visit-band" id="visit" aria-labelledby="visit-title">
+      <div class="container">
+        <div class="visit-band-head reveal">
+          <h2 id="visit-title">Visit Us</h2>
+          <p class="visit-band-lead">${esc(site.transit)}</p>
+        </div>
+        <div class="visit-band-grid reveal">
+          <div class="visit-band-col">
+            <h3>Location</h3>
+            <address class="visit-addr">${esc(ADDR)}</address>
+            <a href="${esc(site.mapsUrl)}" class="link-arrow link-arrow--light" target="_blank" rel="noopener noreferrer">Get directions</a>
+          </div>
+          <div class="visit-band-col">
+            <h3>Hours</h3>
+            <dl class="hours-list">${hoursRows}
+            </dl>
+          </div>
+          <div class="visit-band-col">
+            <h3>Contact</h3>
+            <p class="visit-phone"><a href="tel:${site.phone.replace(/\D/g, "")}">${esc(site.phoneDisplay)}</a></p>
+            <p class="visit-email"><a href="mailto:${esc(site.email)}">${esc(site.email)}</a></p>
+            <a href="/location/" class="link-arrow link-arrow--light">Full hours &amp; parking</a>
+          </div>
+        </div>
+        <div class="visit-band-map reveal">
+          <iframe title="Map to ${esc(site.name)}" src="https://maps.google.com/maps?q=${encodeURIComponent(ADDR)}&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
       </div>
     </section>`;
@@ -338,17 +476,51 @@ function homeBody() {
 
 function menuBody() {
   const cats = menu.categories.map((cat) => {
-    const items = cat.items.map((item) => `
-          <article class="menu-item">
-            <div class="menu-item-head">
-              <h3>${esc(item.name)} <span class="menu-zh">${esc(item.nameZh)}</span>${renderItemTags(item)}</h3>
-              <span class="menu-price">${esc(item.price)}</span>
+    const catLightboxIndex = firstCategoryLightboxIndex(cat);
+    const items = cat.items.map((item) => {
+      const index = lightboxIndexFor(item);
+      const thumbInner = item.image
+        ? `<img src="${item.image}" alt="${esc(item.name)}" width="88" height="88" loading="lazy" />`
+        : "";
+      const thumb = item.image
+        ? lightboxTrigger(index, thumbInner, "menu-item-thumb", `View larger photo of ${item.name}`)
+        : "";
+      const tagsHtml = renderItemTags(item);
+      return `
+          <article class="menu-item${item.image ? " menu-item--with-thumb" : ""}">
+            ${thumb}
+            <div class="menu-item-body">
+              <div class="menu-item-head">
+                <div class="menu-item-names">
+                  <div class="menu-title-row">
+                    <h3 class="menu-name">${esc(item.name)}</h3>
+                    ${tagsHtml}
+                  </div>
+                  ${item.nameZh ? `<p class="menu-meta"><span class="menu-zh">${esc(item.nameZh)}</span></p>` : ""}
+                </div>
+                <span class="menu-price">${esc(item.price)}</span>
+              </div>
+              <p class="menu-desc">${esc(item.desc)}</p>
             </div>
-            <p>${esc(item.desc)}</p>
-          </article>`).join("\n");
+          </article>`;
+    }).join("\n");
+    const featureInner = cat.image
+      ? `<img src="${cat.image}" alt="${esc(cat.name)}" width="480" height="360" loading="lazy" />`
+      : "";
+    const featureImg = cat.image
+      ? lightboxTrigger(
+          catLightboxIndex,
+          featureInner,
+          "menu-category-photo",
+          `View ${cat.name} dishes`,
+        )
+      : "";
     return `
-        <section class="menu-category" aria-labelledby="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">
-          <h2 id="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">${esc(cat.name)}${cat.nameZh ? ` <span class="menu-cat-zh">${esc(cat.nameZh)}</span>` : ""}</h2>
+        <section class="menu-category${cat.image ? " menu-category--featured" : ""}" aria-labelledby="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">
+          <div class="menu-category-top">
+            <h2 id="cat-${cat.name.replace(/\s/g, "-").toLowerCase()}">${esc(cat.name)}${cat.nameZh ? ` <span class="menu-cat-zh">${esc(cat.nameZh)}</span>` : ""}</h2>
+            ${featureImg}
+          </div>
           <div class="menu-list">${items}
           </div>
         </section>`;
@@ -391,12 +563,36 @@ function aboutBody() {
 }
 
 function galleryBody() {
-  const imgs = [1, 2, 3, 4, 5, 6].map((n) => `
+  const galleryItems = [
+    {
+      image: "/assets/images/soup-dumpling.png",
+      name: "Steamed Soup Dumplings",
+      nameZh: "小笼汤包",
+      desc: "Hand-folded Shanghai xiaolongbao, steamed to order in bamboo baskets.",
+      price: "",
+    },
+    ...[2, 3, 4, 5, 6].map((n) => ({
+      image: "/assets/images/hero-poster.jpg",
+      name: `Gallery photo ${n}`,
+      nameZh: "",
+      desc: "",
+      price: "",
+    })),
+  ];
+  const offset = LIGHTBOX_ITEMS.length;
+  const imgs = galleryItems.map((item, i) => `
         <figure class="gallery-item">
-          <img src="/assets/images/hero-poster.jpg" alt="Soup dumplings at ${esc(site.name)} — photo ${n}" width="480" height="360" loading="lazy" />
+          ${lightboxTrigger(
+            offset + i,
+            `<img src="${item.image}" alt="${esc(item.name)}" width="480" height="360" loading="lazy" />`,
+            "gallery-item-btn",
+            `View larger photo: ${item.name}`,
+          )}
         </figure>`).join("\n");
 
-  return `
+  return {
+    extraLightbox: galleryItems,
+    html: `
     <section class="page-hero page-hero-sm">
       <div class="container">
         <h1>Gallery</h1>
@@ -406,8 +602,8 @@ function galleryBody() {
     <section class="section">
       <div class="container gallery-grid">${imgs}
       </div>
-      <p class="container gallery-note">Replace placeholder images in <code>public/assets/images/</code> and rebuild.</p>
-    </section>`;
+    </section>`,
+  };
 }
 
 function locationBody() {
@@ -499,12 +695,15 @@ fs.mkdirSync(DIST, { recursive: true });
 copyDir(PUBLIC, DIST);
 
 for (const p of PAGES) {
-  const body = (BODY[p.slug] || (() => ""))();
+  const fn = BODY[p.slug] || (() => "");
+  const result = fn();
+  const extraLightbox = result?.extraLightbox || [];
+  const body = result?.html ?? result ?? "";
   write(p.file, pageShell(p.slug, body, {
     title: p.title,
     desc: p.desc,
     canonical: url(p.slug),
-  }));
+  }, extraLightbox));
 }
 
 write("404.html", pageShell("404", notFoundBody(), {

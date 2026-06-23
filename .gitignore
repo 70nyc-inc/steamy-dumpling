@@ -8,5 +8,6 @@ node_modules/
 .dev.vars
 dist/
 
-# Source video (processed copy lives in public/assets/video/)
+# Source video (processed copies live in public/assets/video/)
 ../*.mov
+public/assets/video/hero2.mov

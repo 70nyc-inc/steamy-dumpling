@@ -1,10 +1,15 @@
 {
   "name": "Steamy Dumplings",
   "nameZh": "鼎雲軒",
-  "tagline": "Classic Shanghai soup dumplings, crafted by hand",
+  "navWordmark": "Steamy Dumpling",
+  "navLogo": "/assets/images/logo_din_yun_feng_main.png",
+  "logo": "/assets/images/logo_din_yun_feng_2.png",
+  "footerLogo": "/assets/images/logo_din_yun_feng_white.png",
+  "heroLogo": "/assets/images/logo_din_yun_feng_main.png",
+  "tagline": "Handmade Shanghai soup dumplings",
   "domain": "https://steamydumpling.com",
-  "phone": "+1-718-000-0000",
-  "phoneDisplay": "(718) 000-0000",
+  "phone": "+1-607-219-3315",
+  "phoneDisplay": "(607) 219-3315",
   "email": "hello@steamydumpling.com",
   "address": {
     "street": "107 N Aurora St",
@@ -24,13 +29,20 @@
     "google": ""
   },
   "hero": {
-    "title": "Authentic Shanghai Soup Dumplings",
-    "subtitle": "Hand-folded daily · Thin skin · Rich broth"
+    "eyebrow": "Traditional flavors, crafted by hand",
+    "title": "Handmade Shanghai Soup Dumplings",
+    "subtitle": "Hand-folded daily · Thin skin · Rich broth",
+    "highlights": [
+      "Hand-folded daily",
+      "Thin skin",
+      "Rich broth"
+    ]
   },
   "story": {
     "title": "Crafted to Perfection",
     "paragraphs": [
       "At Steamy Dumplings, every xiaolongbao is folded by hand using recipes rooted in Shanghai tradition. We select fresh pork, season with care, and steam each basket to order so the skin stays delicate and the broth stays rich.",
+      "Beyond soup dumplings, our steamed dumplings, wontons, and noodles are all handmade in-store each day. Wherever possible, we source fresh ingredients from local farms and trusted suppliers.",
       "From the first pleat to the final steam, we believe great dumplings are made with patience — never shortcuts."
     ]
   },
