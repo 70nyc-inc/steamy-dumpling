@@ -388,8 +388,16 @@ function homeBody() {
 
   return `
     <section class="hero" aria-label="Introduction">
-      <video class="hero-video" autoplay muted loop playsinline poster="/assets/images/hero-poster.jpg" data-src-desktop="/assets/video/hero.mp4" data-src-mobile="/assets/video/hero-mobile.mp4" data-poster-desktop="/assets/images/hero-poster.jpg" data-poster-mobile="/assets/images/hero-poster-mobile.jpg">
-        <source src="/assets/video/hero.mp4" type="video/mp4" />
+      <link rel="preload" as="video" href="/assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+      <link rel="preload" as="video" href="/assets/video/hero.mp4" type="video/mp4" media="(min-width: 769px)" />
+      <video class="hero-video" autoplay muted loop playsinline>
+        <script>
+          document.currentScript.parentElement.poster = matchMedia("(max-width: 768px)").matches
+            ? "/assets/images/hero-poster-mobile.jpg"
+            : "/assets/images/hero-poster.jpg";
+        </script>
+        <source src="/assets/video/hero-mobile.mp4" type="video/mp4" media="(max-width: 768px)" />
+        <source src="/assets/video/hero.mp4" type="video/mp4" media="(min-width: 769px)" />
       </video>
       <div class="hero-overlay"></div>
       <div class="hero-content container">

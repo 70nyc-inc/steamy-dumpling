@@ -205,7 +205,7 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 }
 
 .site-nav .logo {
-  overflow: hidden;
+  overflow: visible;
   transition: max-width 0.35s ease, opacity 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -352,6 +352,13 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  background: #2a1810 url("/assets/images/hero-poster.jpg") center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    background-image: url("/assets/images/hero-poster-mobile.jpg");
+  }
 }
 
 .hero-video {
@@ -1334,6 +1341,23 @@ body.lightbox-open { overflow: hidden; }
 }
 
 @media (max-width: 768px) {
+  :root {
+    --nav-h-scrolled: 84px;
+  }
+
+  .site-nav,
+  .site-nav .nav-inner {
+    transition: background 0.3s, box-shadow 0.3s;
+  }
+
+  .page-home .site-nav.is-scrolled {
+    height: 88px;
+  }
+
+  .page-home .site-nav.is-scrolled .nav-inner {
+    height: 88px;
+  }
+
   .nav-toggle { display: flex; }
   .btn-nav { display: none; }
 
