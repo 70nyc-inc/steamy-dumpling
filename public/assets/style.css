@@ -325,6 +325,10 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 .nav-links a.active { opacity: 1; }
 .nav-links a.active { border-bottom: 1px solid currentColor; }
 
+.nav-links-cta {
+  display: none;
+}
+
 .nav-backdrop {
   display: none !important;
   appearance: none;
@@ -1473,7 +1477,7 @@ body.lightbox-open { overflow: hidden; }
     border-bottom-color: var(--border);
   }
 
-  .nav-links-cta { margin-top: 1.25rem; }
+  .nav-links-cta { display: list-item; margin-top: 1.25rem; }
 
   .nav-call-link {
     display: flex !important;
