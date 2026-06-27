@@ -203,3 +203,26 @@
     if (e.key === "ArrowRight") step(1);
   });
 })();
+
+// ── View Transitions ─────────────────────────────────
+if (document.startViewTransition) {
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest("a[href]");
+    if (!a) return;
+    const href = a.getAttribute("href");
+    if (
+      !href ||
+      href.startsWith("#") ||
+      href.startsWith("tel:") ||
+      href.startsWith("mailto:") ||
+      a.target === "_blank" ||
+      e.metaKey || e.ctrlKey || e.shiftKey || e.altKey
+    ) return;
+    const url = new URL(href, location.href);
+    if (url.origin !== location.origin) return;
+    e.preventDefault();
+    document.startViewTransition(() => {
+      location.href = href;
+    });
+  });
+}
