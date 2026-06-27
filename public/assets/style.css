@@ -165,8 +165,8 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .dish-grid .dish-card.reveal:nth-child(2) { transition-delay: 0.1s; }
 .dish-grid .dish-card.reveal:nth-child(3) { transition-delay: 0.2s; }
-.review-grid .review-card.reveal:nth-child(2) { transition-delay: 0.1s; }
-.review-grid .review-card.reveal:nth-child(3) { transition-delay: 0.2s; }
+.crafted-grid .crafted-card.reveal:nth-child(2) { transition-delay: 0.1s; }
+.crafted-grid .crafted-card.reveal:nth-child(3) { transition-delay: 0.2s; }
 
 /* ── Navigation ─────────────────────────────────────── */
 
@@ -888,42 +888,55 @@ button.dish-card-img:hover { opacity: 1; }
   opacity: 0.92;
 }
 
-/* ── Reviews ────────────────────────────────────────── */
+/* ── Crafted highlights ──────────────────────────────── */
 
-.reviews { background: var(--white); }
-.reviews h2 { text-align: center; margin-bottom: 2.5rem; }
+.crafted { background: var(--bg-alt); }
 
-.review-grid {
+.crafted-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem;
+  gap: 2rem;
 }
 
-.review-card {
-  margin: 0;
-  padding: 2rem;
-  background: var(--bg);
+.crafted-card {
+  background: var(--white);
   border-radius: var(--radius);
+  padding: 2.25rem 2rem;
   text-align: center;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.35s ease, transform 0.35s ease;
 }
 
-.stars { color: var(--accent); letter-spacing: 0.1em; margin-bottom: 1rem; }
+.crafted-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.09);
+  transform: translateY(-2px);
+}
 
-.review-card p {
+.crafted-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+
+.crafted-card h3 {
   font-family: var(--font-display);
-  font-size: 1.2rem;
-  font-style: italic;
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
   color: var(--text);
-  line-height: 1.5;
-  margin-bottom: 1rem;
 }
 
-.review-card cite {
-  font-size: 0.8rem;
-  font-style: normal;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+.crafted-card p {
+  font-size: 0.95rem;
+  line-height: 1.7;
   color: var(--text-muted);
+  margin: 0;
 }
 
 /* ── Inner pages ────────────────────────────────────── */
@@ -1393,7 +1406,7 @@ body.lightbox-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .dish-grid,
-  .review-grid,
+  .crafted-grid,
   .gallery-grid,
   .contact-grid { grid-template-columns: 1fr; }
 

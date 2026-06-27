@@ -449,10 +449,45 @@ function homeBody() {
       </div>
     </section>
 
-    <section class="section reviews" aria-labelledby="reviews-title">
+    <section class="section crafted" aria-labelledby="crafted-title">
       <div class="container">
-        <h2 id="reviews-title" class="reveal">What Guests Say</h2>
-        <div class="review-grid">${reviews.replace(/<blockquote class="review-card"/g, '<blockquote class="review-card reveal"')}
+        <div class="section-head reveal">
+          <h2 id="crafted-title">Made Here, Every Day</h2>
+          <p>From the first fold to the final steam — everything is done in-house.</p>
+        </div>
+        <div class="crafted-grid">
+          <div class="crafted-card reveal">
+            <div class="crafted-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M12 22c1.5-4 4-7 6-8m0 0c2 1 4.5 4 6 8M18 14v-3" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Hand-Folded Wrappers</h3>
+            <p>Every dumpling wrapper is made from scratch in our kitchen — thin, delicate, and folded by hand from raw dough to finished shape.</p>
+          </div>
+          <div class="crafted-card reveal">
+            <div class="crafted-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.2"/>
+                <rect x="10" y="20" width="16" height="5" rx="1" stroke="currentColor" stroke-width="1.3"/>
+                <path d="M13 20v-4a5 5 0 0 1 10 0v4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Fresh-Ground Filling</h3>
+            <p>Our pork and vegetable fillings are seasoned and prepared in-store daily — never pre-packed, never frozen.</p>
+          </div>
+          <div class="crafted-card reveal">
+            <div class="crafted-icon" aria-hidden="true">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none">
+                <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.2"/>
+                <path d="M11 24h14M13 24V18a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v6" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                <path d="M15 16v-2a3 3 0 0 1 6 0v2" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3>Steamed to Order</h3>
+            <p>Dumplings, pork buns, and vegetable buns go straight from our hands to the steamer — served the moment they're ready.</p>
+          </div>
         </div>
       </div>
     </section>
