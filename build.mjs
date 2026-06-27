@@ -58,7 +58,6 @@ const ADDR_LINE = `${site.address.city}, ${site.address.state}`;
 const NAV = [
   ["menu", "Menu"],
   ["about", "About"],
-  ["gallery", "Gallery"],
   ["location", "Location"],
   ["contact", "Contact"],
 ];
@@ -67,7 +66,6 @@ const PAGES = [
   { slug: "", file: "index.html", title: `${site.name} | Shanghai Soup Dumplings in ${ADDR_LINE}`, desc: `Hand-folded Shanghai soup dumplings in ${site.address.city}. Pork xiaolongbao, crab roe dumplings & more. Dine in or takeout.` },
   { slug: "menu", file: "menu/index.html", title: `Menu | ${site.name}`, desc: `Explore our menu of Shanghai soup dumplings, pan-fried buns, sides and drinks at ${site.name} in ${ADDR_LINE}.` },
   { slug: "about", file: "about/index.html", title: `About | ${site.name}`, desc: `Learn how ${site.name} crafts authentic Shanghai soup dumplings by hand, steamed fresh to order in ${ADDR_LINE}.` },
-  { slug: "gallery", file: "gallery/index.html", title: `Gallery | ${site.name}`, desc: `Photos of our soup dumplings, kitchen, and dining room at ${site.name} in ${site.address.city}.` },
   { slug: "location", file: "location/index.html", title: `Location & Hours | ${site.name}`, desc: `Visit ${site.name} at ${ADDR}. Hours, directions, parking and transit info.` },
   { slug: "contact", file: "contact/index.html", title: `Contact | ${site.name}`, desc: `Contact ${site.name} for questions, large orders, or catering inquiries. Call ${site.phoneDisplay}.` },
 ];
@@ -699,7 +697,6 @@ const BODY = {
   "": homeBody,
   menu: menuBody,
   about: aboutBody,
-  gallery: galleryBody,
   location: locationBody,
   contact: contactBody,
 };
