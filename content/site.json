@@ -20,7 +20,7 @@
   },
   "mapsUrl": "https://www.google.com/maps/dir/?api=1&destination=107+N+Aurora+St,+Ithaca,+NY+14850",
   "hours": [
-    { "days": "Monday – Sunday", "open": "11:00 AM", "close": "9:00 PM" }
+    { "days": "Monday – Sunday", "open": "11:00 AM", "close": "9:30 PM" }
   ],
   "transit": "Downtown Ithaca — walkable from The Commons",
   "parking": "Street parking on Aurora St and nearby public lots",
