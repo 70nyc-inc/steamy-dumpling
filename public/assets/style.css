@@ -133,6 +133,28 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 }
 .btn-nav:hover { background: var(--accent-hover); }
 
+.nav-social {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-right: 0.75rem;
+}
+
+.nav-social-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  color: currentColor;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.nav-social-link:hover { opacity: 1; }
+
+.page-home .site-nav:not(.is-scrolled) .nav-social-link { color: var(--white); }
+
 .link-arrow {
   display: inline-block;
   font-size: 0.85rem;
@@ -1486,6 +1508,7 @@ body.lightbox-open { overflow: hidden; }
 
   .nav-toggle { display: flex; }
   .btn-nav { display: none; }
+  .nav-social { display: none; }
 
   .nav-backdrop {
     display: none !important;

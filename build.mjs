@@ -176,6 +176,14 @@ function nav(active) {
           ${links}
           <li class="nav-links-cta"><a href="tel:${site.phone.replace(/\D/g, "")}" class="nav-call-link">Call to Order</a></li>
         </ul>
+        <div class="nav-social">
+          ${site.social?.instagram ? `<a href="${esc(site.social.instagram)}" class="nav-social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4.5"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
+          </a>` : ""}
+          ${site.social?.facebook ? `<a href="${esc(site.social.facebook)}" class="nav-social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          </a>` : ""}
+        </div>
         <a href="tel:${site.phone.replace(/\D/g, "")}" class="btn btn-nav">Call to Order</a>
       </div>
       <button type="button" class="nav-backdrop" aria-label="Close menu" tabindex="-1"></button>
