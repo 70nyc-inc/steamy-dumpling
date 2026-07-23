@@ -342,8 +342,7 @@
           "name": "Chicken Noodle Soup",
           "nameZh": "鸡汤面",
           "price": "$14.95",
-          "desc": "Comforting chicken broth with noodles.",
-          "image": "/assets/images/chicken-noodle-soup.png"
+          "desc": "Comforting chicken broth with noodles."
         },
         {
           "name": "Shanghai Chow Mein or Udon Noodle",
