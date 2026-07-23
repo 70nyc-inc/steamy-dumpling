@@ -206,8 +206,7 @@
           "name": "Steamed Beef Short Ribs Soup",
           "nameZh": "圆盅炖上汤牛排骨汤",
           "price": "$9.95",
-          "desc": "Slow-steamed beef short ribs in a rich, clear broth.",
-          "image": "/assets/images/steamed-beef-short-ribs-soup.png"
+          "desc": "Slow-steamed beef short ribs in a rich, clear broth."
         }
       ]
     },
@@ -235,8 +234,7 @@
           "name": "Pork Chop Fried Rice",
           "nameZh": "香煎猪排炒饭",
           "price": "$15.95",
-          "desc": "Fried rice topped with a crispy pan-seared pork chop.",
-          "image": "/assets/images/pork-chop-fried-rice.png"
+          "desc": "Fried rice topped with a crispy pan-seared pork chop."
         }
       ]
     },
@@ -248,15 +246,13 @@
           "name": "Pork & Cabbage Steamed Dumplings",
           "nameZh": "白菜猪肉蒸饺",
           "price": "$12.50",
-          "desc": "8 pieces. Handmade steamed dumplings with pork and cabbage.",
-          "image": "/assets/images/steamed-dumpling.png"
+          "desc": "8 pieces. Handmade steamed dumplings with pork and cabbage."
         },
         {
           "name": "Pork & Shrimp & Cabbage Steamed Dumplings",
           "nameZh": "鲜虾白菜猪肉蒸饺",
           "price": "$13.50",
-          "desc": "8 pieces. Pork, shrimp and cabbage in delicate wrappers.",
-          "image": "/assets/images/steamed-dumpling.png"
+          "desc": "8 pieces. Pork, shrimp and cabbage in delicate wrappers."
         },
         {
           "name": "Vegetable Steamed Dumplings",
@@ -265,8 +261,7 @@
           "desc": "8 pieces. Seasonal vegetables folded by hand.",
           "tags": [
             "Vegetarian"
-          ],
-          "image": "/assets/images/steamed-dumpling.png"
+          ]
         },
         {
           "name": "Pork Chive Potsticker",
@@ -354,8 +349,7 @@
           "name": "Shanghai Chow Mein or Udon Noodle",
           "nameZh": "上海炒粗面或乌冬面",
           "price": "$14.95",
-          "desc": "Stir-fried thick noodles. Choice of chicken, pork, beef +$1.00, or shrimp +$1.00.",
-          "image": "/assets/images/shanghai-chow-mein.png"
+          "desc": "Stir-fried thick noodles. Choice of chicken, pork, beef +$1.00, or shrimp +$1.00."
         },
         {
           "name": "Stir Fried Udon with Fried Pork Chop",
