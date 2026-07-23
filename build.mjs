@@ -483,7 +483,7 @@ function homeBody() {
               </svg>
             </div>
             <h3>Hand-Folded Wrappers</h3>
-            <p>Every dumpling wrapper is made from scratch in our kitchen — thin, delicate, and folded by hand from raw dough to finished shape.</p>
+            <p>Every wrapper starts as raw dough in our kitchen — rolled thin, filled, and folded by hand. No shortcuts, no pre-made skins.</p>
           </div>
           <div class="crafted-card reveal">
             <div class="crafted-icon" aria-hidden="true">
