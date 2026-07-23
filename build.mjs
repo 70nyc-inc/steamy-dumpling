@@ -422,7 +422,7 @@ function homeBody() {
       <div class="hero-content container">
         <p class="hero-eyebrow hero-animate">${esc(site.hero.eyebrow || site.tagline)}</p>
         <div class="hero-logo hero-animate">
-          <img src="${esc(site.heroLogo)}" alt="${esc(site.nameZh || site.name)}" class="hero-logo-img" width="733" height="283" loading="eager" />
+          <span class="hero-wordmark">STEAMY DUMPLINGS</span>
         </div>
         <h1 class="hero-title-en hero-animate">${esc(site.hero.title)}</h1>
         <p class="hero-sub hero-animate">${heroHighlightsHtml()}</p>

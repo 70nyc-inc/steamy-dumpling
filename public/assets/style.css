@@ -470,7 +470,17 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 
 .hero-logo {
   margin: 0 0 0.5rem;
-  line-height: 0;
+  line-height: 1;
+}
+
+.hero-wordmark {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  color: var(--white);
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
 .hero-logo-img {
