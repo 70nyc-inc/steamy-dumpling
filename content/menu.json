@@ -388,8 +388,7 @@
           "desc": "Tender baby bok choy with garlic.",
           "tags": [
             "Vegetarian"
-          ],
-          "image": "/assets/images/baby-bok-choy-wok.png"
+          ]
         },
         {
           "name": "Cabbage Wok-Tossed with Garlic",
@@ -398,8 +397,7 @@
           "desc": "Shredded cabbage stir-fried with garlic.",
           "tags": [
             "Vegetarian"
-          ],
-          "image": "/assets/images/cabbage-wok.png"
+          ]
         }
       ]
     },
