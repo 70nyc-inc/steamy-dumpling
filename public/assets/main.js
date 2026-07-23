@@ -81,20 +81,7 @@
   }
 
   if (heroContent) {
-    if (reducedMotion || heroMobileMq.matches) {
-      revealHeroContent();
-    } else if (heroVideo) {
-      const REVEAL_AT = 3;
-      const onTimeUpdate = () => {
-        if (heroVideo.currentTime < REVEAL_AT) return;
-        heroVideo.removeEventListener("timeupdate", onTimeUpdate);
-        revealHeroContent();
-      };
-      heroVideo.addEventListener("timeupdate", onTimeUpdate);
-      setTimeout(revealHeroContent, REVEAL_AT * 1000 + 800);
-    } else {
-      setTimeout(revealHeroContent, 3000);
-    }
+    revealHeroContent();
   }
 
   const revealEls = document.querySelectorAll(".reveal");
