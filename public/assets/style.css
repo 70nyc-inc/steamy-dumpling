@@ -1,19 +1,19 @@
 /* 海雲軒 — Contemporary Chinese restaurant site */
 
 :root {
-  --bg: #f8f5f0;
-  --bg-alt: #ede8df;
-  --text: #111111;
-  --text-muted: #595959;
-  --accent: #8b2332;
-  --accent-hover: #6e1b28;
-  --accent-soft: rgba(139, 35, 50, 0.08);
+  --bg: #f5f1eb;
+  --bg-alt: #ece7de;
+  --text: #0f0f0f;
+  --text-muted: #565656;
+  --accent: #c0502a;
+  --accent-hover: #a0431f;
+  --accent-soft: rgba(192, 80, 42, 0.08);
   --gold-muted: #8b7355;
-  --surface-dark: #111111;
+  --surface-dark: #0f0f0f;
   --white: #ffffff;
-  --border: rgba(17, 17, 17, 0.1);
+  --border: rgba(15, 15, 15, 0.1);
   --overlay: transparent;
-  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-display: "Playfair Display", Georgia, serif;
   --font-body: "Inter", system-ui, sans-serif;
   --nav-h: 100px;
   --nav-h-scrolled: 76px;
@@ -67,14 +67,14 @@ a { color: inherit; text-decoration: none; }
 
 h1, h2, h3 {
   font-family: var(--font-display);
-  font-weight: 600;
-  line-height: 1.15;
+  font-weight: 700;
+  line-height: 1.1;
   margin: 0 0 0.75rem;
 }
 
-h1 { font-size: clamp(2.5rem, 6vw, 4.25rem); letter-spacing: -0.02em; }
-h2 { font-size: clamp(2rem, 4vw, 2.75rem); }
-h3 { font-size: 1.35rem; }
+h1 { font-size: clamp(2.75rem, 6.5vw, 4.75rem); letter-spacing: -0.01em; }
+h2 { font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -0.01em; }
+h3 { font-size: 1.4rem; }
 
 p { margin: 0 0 1rem; color: var(--text-muted); }
 
