@@ -100,8 +100,7 @@
           "desc": "Wood ear mushroom in a tangy vinegar dressing. Served cold.",
           "tags": [
             "Vegetarian"
-          ],
-          "image": "/assets/images/black-wood-ear-mushroom.png"
+          ]
         },
         {
           "name": "Soy Braised Beef",
@@ -156,8 +155,7 @@
           "tags": [
             "Signature",
             "Spicy"
-          ],
-          "image": "/assets/images/pork-wonton-red-chili-sauce.png"
+          ]
         },
         {
           "name": "Shrimp & Pork Wonton in Red Chili Sauce",
@@ -186,8 +184,7 @@
           "name": "Pork Wonton Soup",
           "nameZh": "鲜肉馄饨汤",
           "price": "$6.95",
-          "desc": "5 pieces. Handmade pork wontons in clear broth.",
-          "image": "/assets/images/pork-wonton-soup.png"
+          "desc": "5 pieces. Handmade pork wontons in clear broth."
         },
         {
           "name": "Pork & Shrimp Wonton Soup",
@@ -223,8 +220,7 @@
           "name": "Classic Yang Fried Rice",
           "nameZh": "经典炒饭",
           "price": "$13.95",
-          "desc": "Choice of chicken, pork, shrimp, beef, or vegetable.",
-          "image": "/assets/images/classic-yang-fried-rice.png"
+          "desc": "Choice of chicken, pork, shrimp, beef, or vegetable."
         },
         {
           "name": "Spicy Minced Pork Rice Bowl",
@@ -325,8 +321,7 @@
           "name": "Soy Braised Beef Noodle Soup",
           "nameZh": "酱香牛肉汤面",
           "price": "$15.95",
-          "desc": "Tender braised beef in a rich soy broth over noodles.",
-          "image": "/assets/images/soy-braised-beef-noodle-soup.png"
+          "desc": "Tender braised beef in a rich soy broth over noodles."
         },
         {
           "name": "Pork Wonton Noodle Soup",
@@ -367,8 +362,7 @@
           "name": "Stir Fried Udon with Fried Pork Chop",
           "nameZh": "炒乌冬猪排",
           "price": "$15.95",
-          "desc": "Stir-fried udon noodles topped with a crispy fried pork chop.",
-          "image": "/assets/images/pork-chop-noodle-soup.png"
+          "desc": "Stir-fried udon noodles topped with a crispy fried pork chop."
         }
       ]
     },
@@ -383,8 +377,7 @@
           "desc": "Broccoli florets wok-tossed with garlic.",
           "tags": [
             "Vegetarian"
-          ],
-          "image": "/assets/images/broccoli-wok.png"
+          ]
         },
         {
           "name": "Green Beans Wok-Tossed with Garlic",
@@ -393,8 +386,7 @@
           "desc": "Crisp green beans with fragrant garlic.",
           "tags": [
             "Vegetarian"
-          ],
-          "image": "/assets/images/green-beans-wok.png"
+          ]
         },
         {
           "name": "Baby Bok Choy Wok-Tossed with Garlic",
