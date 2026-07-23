@@ -190,8 +190,7 @@
           "name": "Pork & Shrimp Wonton Soup",
           "nameZh": "鲜肉虾馄饨汤",
           "price": "$7.95",
-          "desc": "5 pieces. Pork and shrimp wontons in savory soup.",
-          "image": "/assets/images/pork-wonton-soup.png"
+          "desc": "5 pieces. Pork and shrimp wontons in savory soup."
         },
         {
           "name": "Hot & Sour Soup",
