@@ -208,7 +208,7 @@ function footer() {
     <footer class="site-footer">
       <div class="container footer-grid">
         <div class="footer-brand">
-          ${logoLink("logo-img logo-img--footer")}
+          <a href="/" class="footer-wordmark">Steamy Dumpling</a>
           <p class="footer-tagline">${esc(site.tagline)}</p>
           ${socialLinks ? `<div class="footer-social">${socialLinks}</div>` : ""}
         </div>
