@@ -128,13 +128,15 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
 }
 
 .btn-doordash {
+  background: var(--white);
+  color: #FF3008;
+  border-color: var(--white);
+  font-weight: 700;
+}
+.btn-doordash:hover {
   background: #FF3008;
   color: var(--white);
   border-color: #FF3008;
-}
-.btn-doordash:hover {
-  background: #d92606;
-  border-color: #d92606;
   transform: translateY(-2px);
 }
 
