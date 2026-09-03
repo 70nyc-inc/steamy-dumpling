@@ -127,6 +127,17 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   transform: translateY(-2px);
 }
 
+.btn-doordash {
+  background: #FF3008;
+  color: var(--white);
+  border-color: #FF3008;
+}
+.btn-doordash:hover {
+  background: #d92606;
+  border-color: #d92606;
+  transform: translateY(-2px);
+}
+
 .btn-nav {
   padding: 0.6rem 1.1rem;
   font-size: 0.72rem;

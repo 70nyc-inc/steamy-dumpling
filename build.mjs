@@ -428,6 +428,7 @@ function homeBody() {
         <p class="hero-sub hero-animate">${heroHighlightsHtml()}</p>
         <div class="hero-cta hero-animate">
           <a href="/menu/" class="btn btn-primary">View Menu</a>
+          <a href="https://www.doordash.com/store/steamy-dumpling-ithaca-51858933/118553946/" class="btn btn-doordash" target="_blank" rel="noopener noreferrer">DoorDash Delivery</a>
           <a href="tel:${site.phone.replace(/\D/g, "")}" class="btn btn-outline">Call to Order</a>
         </div>
       </div>
