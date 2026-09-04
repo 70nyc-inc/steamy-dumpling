@@ -127,6 +127,18 @@ p { margin: 0 0 1rem; color: var(--text-muted); }
   transform: translateY(-2px);
 }
 
+.btn-pickup {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255, 255, 255, 0.65);
+}
+.btn-pickup:hover {
+  background: var(--white);
+  color: var(--text);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+
 .btn-doordash {
   background: var(--white);
   color: #FF3008;
@@ -1463,6 +1475,8 @@ body.lightbox-open { overflow: hidden; }
 }
 .mobile-bar-btn svg { width: 20px; height: 20px; }
 .mobile-bar-btn:hover { color: var(--accent); }
+.mobile-bar-btn--pickup { color: var(--accent); }
+.mobile-bar-btn--pickup:hover { color: var(--accent-hover); }
 .mobile-bar-btn--doordash { color: #FF3008; }
 .mobile-bar-btn--doordash:hover { color: #d92606; }
 
