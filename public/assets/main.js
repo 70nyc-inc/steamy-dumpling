@@ -192,6 +192,31 @@
 })();
 
 // ── View Transitions ─────────────────────────────────
+// ── Menu category nav highlight ──────────────────────
+const catNav = document.querySelector(".menu-cat-nav");
+if (catNav) {
+  const catSections = Array.from(document.querySelectorAll(".menu-category[id], [id^='cat-']"));
+  const catLinks = Array.from(catNav.querySelectorAll(".menu-cat-nav-link"));
+  const navOffset = 120;
+
+  function updateActiveLink() {
+    let current = catSections[0];
+    for (const sec of catSections) {
+      if (sec.getBoundingClientRect().top <= navOffset) current = sec;
+    }
+    catLinks.forEach((l) => {
+      const target = l.getAttribute("href").slice(1);
+      l.classList.toggle("is-active", current && current.id === target);
+    });
+    // scroll active link into view within nav
+    const active = catNav.querySelector(".is-active");
+    if (active) active.scrollIntoView({ inline: "nearest", block: "nearest" });
+  }
+
+  window.addEventListener("scroll", updateActiveLink, { passive: true });
+  updateActiveLink();
+}
+
 if (document.startViewTransition) {
   document.addEventListener("click", (e) => {
     const a = e.target.closest("a[href]");

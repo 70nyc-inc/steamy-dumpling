@@ -233,11 +233,7 @@ function footer() {
       </a>
       <a href="https://pos.chowbus.com/online-ordering/store/Steamy-Dumpling/44247?referrer=google_food_ordering" class="mobile-bar-btn mobile-bar-btn--pickup" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M16 11V7a4 4 0 0 0-8 0v4M5 9h14l1 12H4L5 9z"/></svg>
-        Pickup
-      </a>
-      <a href="https://www.doordash.com/store/steamy-dumpling-ithaca-51858933/118553946/" class="mobile-bar-btn mobile-bar-btn--doordash" target="_blank" rel="noopener noreferrer">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        Delivery
+        Order
       </a>
       <a href="${esc(site.mapsUrl)}" class="mobile-bar-btn" target="_blank" rel="noopener noreferrer">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
@@ -433,10 +429,13 @@ function homeBody() {
         <h1 class="hero-title-en hero-animate">${esc(site.hero.title)}</h1>
         <p class="hero-sub hero-animate">${heroHighlightsHtml()}</p>
         <div class="hero-cta hero-animate">
-          <a href="/menu/" class="btn btn-primary">View Menu</a>
           <a href="https://pos.chowbus.com/online-ordering/store/Steamy-Dumpling/44247?referrer=google_food_ordering" class="btn btn-pickup" target="_blank" rel="noopener noreferrer">Order Pickup</a>
           <a href="https://www.doordash.com/store/steamy-dumpling-ithaca-51858933/118553946/" class="btn btn-doordash" target="_blank" rel="noopener noreferrer">Order Delivery</a>
-          <a href="tel:${site.phone.replace(/\D/g, "")}" class="btn btn-outline">Call to Order</a>
+        </div>
+        <div class="hero-cta-secondary hero-animate">
+          <a href="/menu/" class="hero-link">View Menu</a>
+          <span class="hero-link-sep">·</span>
+          <a href="tel:${site.phone.replace(/\D/g, "")}" class="hero-link">Call to Order</a>
         </div>
       </div>
       <a href="#story" class="hero-scroll" aria-label="Scroll to our story">
@@ -614,9 +613,14 @@ function menuBody() {
         </ul>
       </div>
     </section>
+    <nav class="menu-cat-nav" aria-label="Menu categories">
+      <div class="menu-cat-nav-inner">
+        ${menu.categories.map((c) => `<a href="#cat-${c.name.replace(/\s/g, "-").toLowerCase()}" class="menu-cat-nav-link">${esc(c.name)}</a>`).join("")}
+      </div>
+    </nav>
     <section class="section menu-page">
       <div class="container">${cats}
-        <p class="menu-note">Prices subject to change. Please inform staff of any allergies.</p>
+        <p class="menu-note">Menu prices may vary for online orders. Prices subject to change. Please inform staff of any allergies.</p>
       </div>
     </section>`;
 }
@@ -726,9 +730,16 @@ function contactBody() {
     <section class="section">
       <div class="container contact-grid">
         <div class="contact-card">
+          <h2>Order Online</h2>
+          <div class="contact-order-btns">
+            <a href="https://pos.chowbus.com/online-ordering/store/Steamy-Dumpling/44247?referrer=google_food_ordering" class="btn btn-primary" target="_blank" rel="noopener noreferrer">Order Pickup</a>
+            <a href="https://www.doordash.com/store/steamy-dumpling-ithaca-51858933/118553946/" class="btn btn-outline-dark" target="_blank" rel="noopener noreferrer">Order Delivery</a>
+          </div>
+        </div>
+        <div class="contact-card">
           <h2>Call</h2>
           <p><a href="tel:${site.phone.replace(/\D/g, "")}" class="contact-big">${esc(site.phoneDisplay)}</a></p>
-          <p>Best for takeout and same-day orders.</p>
+          <p>Best for same-day and large orders.</p>
         </div>
         <div class="contact-card">
           <h2>Email</h2>
