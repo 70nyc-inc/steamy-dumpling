@@ -274,12 +274,10 @@ function head({ title, desc, canonical, ogImage = "/assets/images/hero-poster.jp
 }
 
 function schemaRestaurant() {
-  const hours = site.hours.map((h) => ({
-    "@type": "OpeningHoursSpecification",
-    dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-    opens: "11:00",
-    closes: "21:00",
-  }));
+  const hours = [
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Sunday"], opens: "11:00", closes: "21:00" },
+    { "@type": "OpeningHoursSpecification", dayOfWeek: ["Friday", "Saturday"], opens: "11:00", closes: "21:30" },
+  ];
   const json = {
     "@context": "https://schema.org",
     "@graph": [
@@ -406,7 +404,7 @@ function homeBody() {
   const hoursRows = site.hours.map((h) => `
             <div class="hours-row">
               <dt>${esc(h.days)}</dt>
-              <dd>${esc(h.open)} – ${esc(h.close)}</dd>
+              <dd>${h.close ? `${esc(h.open)} – ${esc(h.close)}` : esc(h.open)}</dd>
             </div>`).join("");
 
   return `
@@ -697,7 +695,7 @@ function locationBody() {
             ${site.hours.map((h) => `
             <div class="hours-row">
               <dt>${esc(h.days)}</dt>
-              <dd>${esc(h.open)} – ${esc(h.close)}</dd>
+              <dd>${h.close ? `${esc(h.open)} – ${esc(h.close)}` : esc(h.open)}</dd>
             </div>`).join("")}
           </dl>
           <h2>Getting Here</h2>
